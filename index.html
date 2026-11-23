@@ -1,0 +1,5131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piojitos Kids | Catálogo Digital y Confecciones Infantiles Huancayo</title>
+  <meta name="description" content="Catálogo digital interactivo de Piojitos Kids. Chompas y prendas infantiles de alta calidad confeccionadas en Huancayo, Perú. Pedidos y consultas directas por WhatsApp.">
+  <meta name="theme-color" content="#F7C9D9">
+
+  <!-- Tipografía Google Fonts (Outfit & Plus Jakarta Sans) con fallbacks del sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES CSS Y TEMA DE DISEÑO
+       Identidad visual: Pastel infantil contemporáneo, acogedor y comercial
+       ========================================================================== */
+    :root {
+      /* Paleta Solicitada */
+      --color-primary-pink: #F7C9D9;      /* Rosa pastel suave */
+      --color-cream-bg: #FFF9F2;          /* Crema cálido de fondo */
+      --color-pastel-lilac: #DDD3FA;      /* Lila pastel */
+      --color-soft-coral: #F48C8C;        /* Coral suave para acentos */
+      --color-dark-text: #33343A;         /* Gris oscuro para textos principales */
+      --color-white: #FFFFFF;             /* Blanco puro */
+
+      /* Variaciones y contraste accesible para botones y estados */
+      --color-coral-deep: #E26D6D;        /* Coral con contraste WCAG AA */
+      --color-pink-deep: #DE8BA5;
+      --color-lilac-deep: #8E7CC3;
+      --color-text-muted: #6B7280;
+      --color-text-light: #9CA3AF;
+      --color-border: #F0E2D8;
+      --color-border-subtle: #F7EFE9;
+      --color-surface: #FFFFFF;
+      --color-surface-soft: #FFF5EC;
+      --color-whatsapp: #25D366;
+      --color-whatsapp-dark: #1EBE5D;
+      --color-tiktok: #000000;
+      --color-tag-school: #3B82F6;
+      --color-tag-featured: #F59E0B;
+      --color-tag-new: #10B981;
+
+      /* Tipografía */
+      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      /* Sombras suaves de estilo e-commerce */
+      --shadow-xs: 0 1px 2px rgba(51, 52, 58, 0.04);
+      --shadow-sm: 0 2px 6px rgba(51, 52, 58, 0.06);
+      --shadow-md: 0 6px 16px rgba(51, 52, 58, 0.08);
+      --shadow-lg: 0 12px 28px rgba(51, 52, 58, 0.12);
+      --shadow-floating: 0 16px 36px rgba(244, 140, 140, 0.25);
+
+      /* Radios de borde orgánicos y amigables */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      /* Transiciones */
+      --transition-fast: 0.18s ease;
+      --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      /* Layout */
+      --header-height: 76px;
+      --container-max: 1200px;
+    }
+
+    /* ==========================================================================
+       2. RESET Y ESTILOS BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-cream-bg);
+      color: var(--color-dark-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--color-dark-text);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    input, select, textarea {
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--color-dark-text);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Insignias de [SUPUESTO] */
+    .badge-supuesto {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background-color: #FEF3C7;
+      color: #92400E;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      border: 1px solid #FDE68A;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    /* ==========================================================================
+       3. BARRA DE ANUNCIOS SUPERIOR
+       ========================================================================== */
+    .announcement-bar {
+      background: linear-gradient(90deg, #FAD0DE 0%, #E6DCFD 50%, #FEDCD2 100%);
+      color: var(--color-dark-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .announcement-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .announcement-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--color-coral-deep);
+    }
+
+    /* ==========================================================================
+       4. ENCABEZADO / NAVEGACIÓN
+       ========================================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+      transition: box-shadow var(--transition-normal);
+    }
+
+    .header.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* Logo Tipográfico Provisional */
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .logo-main {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--color-primary-pink) 0%, var(--color-pastel-lilac) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-xs);
+      border: 1.5px solid var(--color-white);
+    }
+
+    .logo-text {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--color-dark-text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      color: var(--color-coral-deep);
+    }
+
+    .logo-subtitle {
+      font-size: 0.68rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: -3px;
+      margin-left: 46px;
+    }
+
+    /* Menú Desktop */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-dark-text);
+      padding: 8px 12px;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background-color: var(--color-surface-soft);
+      color: var(--color-coral-deep);
+    }
+
+    /* Acciones Header (Carrito, Métricas, Menú móvil) */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-metrics-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #FEF3C7;
+      color: #92400E;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid #FDE68A;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-metrics-toggle:hover {
+      background-color: #FDE68A;
+      transform: translateY(-1px);
+    }
+
+    .btn-cart-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      color: var(--color-dark-text);
+      font-size: 1.25rem;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .btn-cart-trigger:hover {
+      border-color: var(--color-coral-deep);
+      color: var(--color-coral-deep);
+      transform: translateY(-1px);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      min-width: 20px;
+      height: 20px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+      border: 2px solid var(--color-white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-dark-text);
+      font-size: 1.4rem;
+    }
+
+    /* ==========================================================================
+       5. MENÚ MÓVIL (DRAWER)
+       ========================================================================== */
+    .mobile-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .mobile-drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 82%;
+      max-width: 320px;
+      background-color: var(--color-white);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .mobile-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 1.25rem;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-dark-text);
+      border-radius: var(--radius-md);
+      transition: background-color var(--transition-fast);
+    }
+
+    .mobile-nav-link:hover, .mobile-nav-link.active {
+      background-color: var(--color-surface-soft);
+      color: var(--color-coral-deep);
+    }
+
+    /* Barra de navegación inferior para móvil */
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--color-border);
+      z-index: 95;
+      padding: 6px 12px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    }
+
+    .bottom-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 100%;
+      align-items: center;
+    }
+
+    .bottom-bar-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      position: relative;
+    }
+
+    .bottom-bar-btn.active, .bottom-bar-btn:hover {
+      color: var(--color-coral-deep);
+    }
+
+    .bottom-bar-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ==========================================================================
+       6. BOTONES Y COMPONENTES REUTILIZABLES
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      box-shadow: 0 4px 14px rgba(226, 109, 109, 0.35);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-color: #D35B5B;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(226, 109, 109, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-white);
+      color: var(--color-dark-text);
+      border: 1.5px solid var(--color-border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      border-color: var(--color-coral-deep);
+      color: var(--color-coral-deep);
+      transform: translateY(-2px);
+      background-color: var(--color-surface-soft);
+    }
+
+    .btn-tiktok {
+      background: #010101;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-tiktok:hover:not(:disabled) {
+      background: #1F1F1F;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--color-whatsapp);
+      color: var(--color-white);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-whatsapp:hover:not(:disabled) {
+      background-color: var(--color-whatsapp-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    .btn-icon-only {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    /* Etiquetas de producto */
+    .badge-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-destacado {
+      background-color: #FEF3C7;
+      color: #B45309;
+      border: 1px solid #FDE68A;
+    }
+
+    .badge-nuevo {
+      background-color: #D1FAE5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+    }
+
+    .badge-escolar {
+      background-color: #DBEAFE;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+    }
+
+    /* Encabezados de sección estándar */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-coral-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       7. SECCIÓN 7.1: HERO / INICIO
+       ========================================================================== */
+    .hero-section {
+      padding: 3rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-dark-text);
+      box-shadow: var(--shadow-xs);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-coral-deep);
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span.highlight {
+      position: relative;
+      color: var(--color-coral-deep);
+      display: inline-block;
+    }
+
+    .hero-title span.highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background-color: var(--color-primary-pink);
+      z-index: -1;
+      border-radius: var(--radius-sm);
+      opacity: 0.7;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-trust-badges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .trust-text h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .trust-text p {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Visual Hero (Tarjeta / Composición de imágenes) */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card-main {
+      background-color: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #FEE2E2 0%, #EDE9FE 100%);
+      position: relative;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-normal);
+    }
+
+    .hero-card-main:hover .hero-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .hero-floating-pill {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 5;
+    }
+
+    .hero-floating-pill.pill-huancayo {
+      top: 24px;
+      left: -20px;
+    }
+
+    .hero-floating-pill.pill-tiktok {
+      bottom: 24px;
+      right: -15px;
+    }
+
+    /* ==========================================================================
+       8. BARRA DE CATEGORÍAS RÁPIDAS
+       ========================================================================== */
+    .categories-bar-section {
+      padding: 1rem 0 2rem;
+    }
+
+    .categories-scroll {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.5rem 0.25rem 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .categories-scroll::-webkit-scrollbar-thumb {
+      background-color: var(--color-border);
+      border-radius: var(--radius-full);
+    }
+
+    .category-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-dark-text);
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .category-chip:hover {
+      border-color: var(--color-coral-deep);
+      background-color: var(--color-surface-soft);
+      transform: translateY(-2px);
+    }
+
+    .category-chip.active {
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      border-color: var(--color-coral-deep);
+      box-shadow: 0 4px 12px rgba(226, 109, 109, 0.3);
+    }
+
+    .category-chip-icon {
+      font-size: 1.15rem;
+    }
+
+    /* ==========================================================================
+       9. SECCIÓN 7.2: CATÁLOGO DE PRODUCTOS Y FILTROS INTELIGENTES
+       ========================================================================== */
+    .catalog-section {
+      padding: 3rem 0 4rem;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Barra lateral de filtros (Desktop) */
+    .filters-sidebar {
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: sticky;
+      top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .filters-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .filters-header h3 {
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-reset-filters {
+      font-size: 0.8rem;
+      color: var(--color-coral-deep);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .filter-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .filter-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-dark-text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Input de Búsqueda */
+    .search-input-wrap {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input-wrap input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .search-input-wrap input:focus {
+      border-color: var(--color-coral-deep);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-light);
+      pointer-events: none;
+    }
+
+    /* Lista de Categorías en filtro */
+    .filter-categories-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .filter-radio-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: background-color var(--transition-fast);
+    }
+
+    .filter-radio-label:hover {
+      background-color: var(--color-surface-soft);
+    }
+
+    .filter-radio-label input {
+      margin-right: 8px;
+      accent-color: var(--color-coral-deep);
+    }
+
+    .filter-count-badge {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      background: var(--color-white);
+      padding: 1px 6px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+    }
+
+    /* Selector de Tallas (Chips de filtro) */
+    .size-filter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .size-filter-btn {
+      padding: 6px 0;
+      text-align: center;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-dark-text);
+      transition: all var(--transition-fast);
+    }
+
+    .size-filter-btn:hover {
+      border-color: var(--color-coral-deep);
+    }
+
+    .size-filter-btn.active {
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      border-color: var(--color-coral-deep);
+    }
+
+    /* Selector de Colores (Swatches) */
+    .color-filter-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .color-swatch-filter {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid var(--color-white);
+      box-shadow: 0 0 0 1px var(--color-border);
+      cursor: pointer;
+      position: relative;
+      transition: transform var(--transition-fast);
+    }
+
+    .color-swatch-filter:hover {
+      transform: scale(1.15);
+    }
+
+    .color-swatch-filter.active {
+      box-shadow: 0 0 0 2px var(--color-coral-deep);
+      transform: scale(1.1);
+    }
+
+    /* Rango de Precios */
+    .price-range-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .price-range-slider {
+      width: 100%;
+      accent-color: var(--color-coral-deep);
+    }
+
+    .price-range-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    /* Cabecera del Grid del Catálogo */
+    .catalog-main-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .catalog-count-text {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    .catalog-count-text strong {
+      color: var(--color-dark-text);
+    }
+
+    .catalog-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sort-select {
+      padding: 8px 14px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .btn-mobile-filter-open {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* Cuadrícula de Tarjetas de Producto */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Tarjeta de Producto */
+    .product-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-border-subtle);
+    }
+
+    .product-card-media {
+      position: relative;
+      aspect-ratio: 1/1;
+      background-color: var(--color-cream-bg);
+      overflow: hidden;
+    }
+
+    .product-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-normal);
+    }
+
+    .product-card:hover .product-card-img {
+      transform: scale(1.04);
+    }
+
+    .product-card-tags {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 2;
+    }
+
+    .product-card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category-meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
+    }
+
+    .product-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+      color: var(--color-dark-text);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-sizes-preview {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .size-pill-mini {
+      background-color: var(--color-surface-soft);
+      padding: 1px 6px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+    }
+
+    .product-card-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .product-price-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-ref-label {
+      font-size: 0.68rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .product-price-amount {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--color-coral-deep);
+      font-family: var(--font-heading);
+    }
+
+    .product-actions-btn-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-quick-view {
+      background-color: var(--color-surface-soft);
+      color: var(--color-dark-text);
+      border: 1px solid var(--color-border);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-quick-view:hover {
+      background-color: var(--color-pastel-lilac);
+      color: var(--color-dark-text);
+      transform: scale(1.08);
+    }
+
+    .btn-card-add {
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      box-shadow: 0 2px 8px rgba(226, 109, 109, 0.3);
+    }
+
+    .btn-card-add:hover {
+      background-color: #D35B5B;
+      transform: scale(1.08);
+    }
+
+    /* Estado sin resultados */
+    .no-results-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background-color: var(--color-cream-bg);
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--color-border);
+      grid-column: 1 / -1;
+    }
+
+    .no-results-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ==========================================================================
+       10. SECCIÓN 7.3: MODAL DE DETALLE DEL PRODUCTO
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(30, 31, 36, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .product-modal-dialog {
+      background-color: var(--color-white);
+      border-radius: var(--radius-xl);
+      max-width: 860px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      transform: scale(0.95) translateY(10px);
+      transition: transform var(--transition-bounce);
+      border: 1px solid var(--color-border);
+    }
+
+    .modal-backdrop.open .product-modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-dark-text);
+      font-size: 1.2rem;
+      z-index: 10;
+      box-shadow: var(--shadow-xs);
+      transition: all var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--color-surface-soft);
+      transform: rotate(90deg);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    /* Galería modal */
+    .modal-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .modal-main-img-wrap {
+      aspect-ratio: 1/1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .modal-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-thumbs-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .modal-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all var(--transition-fast);
+    }
+
+    .modal-thumb.active, .modal-thumb:hover {
+      border-color: var(--color-coral-deep);
+      opacity: 1;
+    }
+
+    .modal-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Info modal */
+    .modal-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .modal-product-title {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .modal-price-box {
+      background-color: var(--color-surface-soft);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      border: 1px solid var(--color-border);
+    }
+
+    .modal-price-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-coral-deep);
+      font-family: var(--font-heading);
+    }
+
+    .modal-price-ref {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .modal-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Selectores en modal */
+    .selector-block {
+      margin-bottom: 1.25rem;
+    }
+
+    .selector-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .selector-label span.selected-value {
+      color: var(--color-coral-deep);
+      font-weight: 600;
+    }
+
+    .sizes-selector-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .size-select-btn {
+      min-width: 44px;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--color-border);
+      background-color: var(--color-white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--color-dark-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .size-select-btn:hover {
+      border-color: var(--color-coral-deep);
+    }
+
+    .size-select-btn.active {
+      border-color: var(--color-coral-deep);
+      background-color: var(--color-coral-deep);
+      color: var(--color-white);
+      box-shadow: 0 3px 10px rgba(226, 109, 109, 0.35);
+    }
+
+    .colors-selector-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .color-select-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-border);
+      background-color: var(--color-white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+
+    .color-select-btn .swatch-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .color-select-btn:hover {
+      border-color: var(--color-coral-deep);
+    }
+
+    .color-select-btn.active {
+      border-color: var(--color-coral-deep);
+      background-color: var(--color-surface-soft);
+      color: var(--color-coral-deep);
+    }
+
+    /* Selector de Cantidad */
+    .quantity-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quantity-control {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background-color: var(--color-white);
+      overflow: hidden;
+    }
+
+    .btn-qty {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-dark-text);
+      transition: background-color var(--transition-fast);
+    }
+
+    .btn-qty:hover {
+      background-color: var(--color-surface-soft);
+      color: var(--color-coral-deep);
+    }
+
+    .qty-number {
+      width: 44px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .modal-stock-notice {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: #92400E;
+      background-color: #FEF3C7;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      border: 1px solid #FDE68A;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    /* ==========================================================================
+       11. SECCIÓN 7.3 Y 5: CARRITO DE COMPRAS Y PEDIDOS POR WHATSAPP
+       ========================================================================== */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(30, 31, 36, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1050;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .cart-drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 450px;
+      background-color: var(--color-white);
+      z-index: 1060;
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform var(--transition-bounce);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--color-cream-bg);
+    }
+
+    .cart-header h3 {
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-items-container {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 12px;
+      padding: 10px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background-color: var(--color-white);
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      background-color: var(--color-cream-bg);
+    }
+
+    .cart-item-details h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-spec {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-bottom: 6px;
+    }
+
+    .cart-item-qty-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-item-qty-btn {
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .cart-item-qty-val {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .cart-item-price-col {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .cart-item-subtotal {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--color-coral-deep);
+    }
+
+    .btn-cart-remove {
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+      transition: color var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .btn-cart-remove:hover {
+      color: #EF4444;
+    }
+
+    /* Carrito vacío */
+    .cart-empty-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-text-muted);
+    }
+
+    .cart-empty-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-border);
+    }
+
+    /* Footer del Carrito */
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      background-color: var(--color-cream-bg);
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .cart-summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--color-border);
+    }
+
+    .cart-summary-total span:first-child {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .cart-summary-total .total-amount {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--color-coral-deep);
+      font-family: var(--font-heading);
+    }
+
+    /* ==========================================================================
+       12. MODAL DE PREPARACIÓN DE PEDIDO WHATSAPP
+       ========================================================================== */
+    .order-modal-dialog {
+      background-color: var(--color-white);
+      border-radius: var(--radius-xl);
+      max-width: 620px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .order-form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .order-form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .order-form-input, .order-form-select, .order-form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: border-color var(--transition-fast);
+      background-color: var(--color-white);
+    }
+
+    .order-form-input:focus, .order-form-select:focus, .order-form-textarea:focus {
+      border-color: var(--color-coral-deep);
+    }
+
+    /* Vista previa del mensaje de WhatsApp generado */
+    .whatsapp-preview-box {
+      background-color: #DCF8C6;
+      color: #075E54;
+      border: 1px solid #C2E7A9;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      line-height: 1.4;
+      margin-bottom: 1.25rem;
+      max-height: 220px;
+      overflow-y: auto;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* Advertencia de Número WhatsApp pendiente de configuración */
+    .whatsapp-config-alert {
+      background-color: #FEF3C7;
+      border: 1.5px solid #F59E0B;
+      color: #92400E;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .whatsapp-config-alert-header {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       13. SECCIÓN 7.5: CÓMO COMPRAR (4 PASOS VISUALES)
+       ========================================================================== */
+    .how-to-buy-section {
+      padding: 4.5rem 0;
+      background: linear-gradient(180deg, var(--color-cream-bg) 0%, #FFF3E6 100%);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .step-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-normal);
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--color-primary-pink) 0%, var(--color-pastel-lilac) 100%);
+      color: var(--color-dark-text);
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      border: 2px solid var(--color-white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .step-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+    }
+
+    .disclaimer-banner {
+      margin-top: 2.5rem;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       14. SECCIÓN 7.6: TIKTOK EN VIVO Y COMUNIDAD
+       ========================================================================== */
+    .tiktok-section {
+      padding: 4.5rem 0;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .tiktok-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .tiktok-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tiktok-content p {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tiktok-profiles-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tiktok-profile-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+    }
+
+    .tiktok-profile-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tiktok-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .tiktok-names h4 {
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .tiktok-names span {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Tarjeta visual de TikTok */
+    .tiktok-preview-mockup {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+      color: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tiktok-mockup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #FF0050;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .tiktok-mockup-title {
+      color: #FFFFFF;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .tiktok-mockup-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: #D1D5DB;
+    }
+
+    .tiktok-mockup-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       15. SECCIÓN 7.4: NOSOTROS
+       ========================================================================== */
+    .about-section {
+      padding: 4.5rem 0;
+      background-color: var(--color-cream-bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      background-color: var(--color-white);
+      padding: 1.5rem;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-badge-huancayo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--color-surface-soft);
+      padding: 14px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      margin-top: 1rem;
+    }
+
+    .about-text-content p.official-statement {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--color-dark-text);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      background-color: var(--color-white);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--color-coral-deep);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .about-data-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-data-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+    }
+
+    .about-data-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .about-data-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-dark-text);
+    }
+
+    /* ==========================================================================
+       16. SECCIÓN 7.7: CONTACTO Y ENVÍOS
+       ========================================================================== */
+    .contact-section {
+      padding: 4.5rem 0;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .contact-card {
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-info-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .shipping-guide-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+
+    .shipping-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .shipping-agency-chip {
+      background-color: var(--color-surface-soft);
+      border: 1px solid var(--color-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       17. SECCIÓN 11: PANEL DE MÉTRICAS DEMOSTRATIVAS (MODO DE PRUEBA)
+       ========================================================================== */
+    .metrics-modal-dialog {
+      background-color: var(--color-white);
+      border-radius: var(--radius-xl);
+      max-width: 750px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .metrics-grid-counters {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .metric-counter-card {
+      background-color: var(--color-cream-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metric-counter-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-coral-deep);
+      font-family: var(--font-heading);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .metric-counter-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .metrics-table th, .metrics-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .metrics-table th {
+      background-color: var(--color-surface-soft);
+      font-weight: 700;
+    }
+
+    /* Modal de Configuración Rápida de WhatsApp */
+    .config-modal-dialog {
+      background-color: var(--color-white);
+      border-radius: var(--radius-xl);
+      max-width: 520px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* ==========================================================================
+       18. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: #26272B;
+      color: #E5E7EB;
+      padding: 4rem 0 2rem;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--color-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links-list a {
+      color: #9CA3AF;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-primary-pink);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid #374151;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: #9CA3AF;
+    }
+
+    /* ==========================================================================
+       19. NOTIFICACIONES TOAST
+       ========================================================================== */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background-color: var(--color-white);
+      color: var(--color-dark-text);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-lg);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: auto;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all var(--transition-bounce);
+      max-width: 360px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      font-size: 1.2rem;
+    }
+
+    /* Botón flotante de WhatsApp */
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 84px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--color-whatsapp);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      z-index: 90;
+      transition: all var(--transition-fast);
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: scale(1.08);
+      background-color: var(--color-whatsapp-dark);
+    }
+
+    /* ==========================================================================
+       20. RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .catalog-layout {
+        grid-template-columns: 240px 1fr;
+        gap: 1.5rem;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        height: 66px;
+      }
+
+      .nav-desktop, .btn-metrics-toggle {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-bottom-bar {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 64px; /* Espacio para barra inferior */
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-trust-badges {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .catalog-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filters-sidebar {
+        display: none; /* Se abre en drawer en móvil */
+      }
+
+      .btn-mobile-filter-open {
+        display: inline-flex;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.25rem;
+      }
+
+      .about-grid, .tiktok-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-grid-counters {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .floating-whatsapp-btn {
+        bottom: 76px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA DE ANUNCIOS SUPERIOR
+       ========================================================================== -->
+  <aside class="announcement-bar" aria-label="Aviso comercial">
+    <div class="announcement-item">
+      <span>🧵 Fabricantes en Jr. Cajamarca 291, Huancayo</span>
+    </div>
+    <span class="announcement-dot" aria-hidden="true"></span>
+    <div class="announcement-item">
+      <span>📦 Envíos a Lima y todas las provincias del Perú</span>
+    </div>
+    <span class="announcement-dot" aria-hidden="true"></span>
+    <div class="announcement-item">
+      <span>📱 Pedidos coordinados por WhatsApp</span>
+    </div>
+    <span class="badge-supuesto" title="Datos referenciales de demostración">[SUPUESTO DEMO]</span>
+  </aside>
+
+  <!-- ==========================================================================
+       ENCABEZADO / NAVEGACIÓN
+       ========================================================================== -->
+  <header class="header" id="mainHeader">
+    <div class="container header-inner">
+      <!-- Logo Tipográfico Provisional -->
+      <a href="#inicio" class="logo-container" aria-label="Piojitos Kids - Inicio">
+        <div class="logo-main">
+          <div class="logo-icon" aria-hidden="true">🐥</div>
+          <span class="logo-text">Piojitos <span>Kids</span></span>
+        </div>
+        <div class="logo-subtitle">
+          <span>Moda Infantil Huancayo</span>
+          <span class="badge-supuesto" style="font-size:0.6rem;">[LOGO PROVISIONAL]</span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-desktop">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+          <li><a href="#como-comprar" class="nav-link">Cómo comprar</a></li>
+          <li><a href="#tiktok-vivo" class="nav-link">TikTok en vivo</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <!-- Botón Modo Prueba / Métricas Demostrativas -->
+        <button type="button" class="btn-metrics-toggle" id="btnOpenMetricsModal" title="Ver métricas locales de demostración">
+          <span>📊 Métricas Demo</span>
+        </button>
+
+        <!-- Botón Configurar WhatsApp -->
+        <button type="button" class="btn-metrics-toggle" id="btnOpenConfigModal" style="background:#E0F2FE; color:#0369A1; border-color:#BAE6FD;" title="Ajustes de WhatsApp">
+          <span>⚙️ WhatsApp</span>
+        </button>
+
+        <!-- Acceso al Carrito -->
+        <button type="button" class="btn-cart-trigger" id="btnCartTrigger" aria-label="Ver carrito de compras" title="Ver carrito">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+
+        <!-- Botón Menú Móvil -->
+        <button type="button" class="menu-toggle" id="btnMobileMenuToggle" aria-label="Abrir menú de navegación">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MENÚ MÓVIL (DRAWER)
+       ========================================================================== -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Menú móvil">
+    <div class="mobile-drawer-header">
+      <div class="logo-main">
+        <div class="logo-icon">🐥</div>
+        <span class="logo-text">Piojitos <span>Kids</span></span>
+      </div>
+      <button type="button" id="btnMobileDrawerClose" style="font-size:1.5rem; color:var(--color-dark-text);" aria-label="Cerrar menú">&times;</button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="#inicio" class="mobile-nav-link active">🏠 Inicio</a></li>
+      <li><a href="#catalogo" class="mobile-nav-link">🧶 Catálogo de Prendas</a></li>
+      <li><a href="#como-comprar" class="mobile-nav-link">📋 Cómo comprar</a></li>
+      <li><a href="#tiktok-vivo" class="mobile-nav-link">🎥 TikTok en vivo</a></li>
+      <li><a href="#nosotros" class="mobile-nav-link">🏢 Sobre nosotros</a></li>
+      <li><a href="#contacto" class="mobile-nav-link">📍 Ubicación y Contacto</a></li>
+    </ul>
+
+    <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px;">
+      <button type="button" class="btn btn-secondary btn-sm" id="btnMobileMetricsTrigger">
+        📊 Métricas Demostrativas
+      </button>
+      <button type="button" class="btn btn-secondary btn-sm" id="btnMobileConfigTrigger">
+        ⚙️ Configurar WhatsApp
+      </button>
+      <a href="https://www.tiktok.com/@piojitos.kids4" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok btn-sm">
+        Seguir en TikTok @piojitos.kids4
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN INFERIOR (MÓVIL)
+       ========================================================================== -->
+  <nav class="mobile-bottom-bar" aria-label="Navegación móvil rápida">
+    <div class="bottom-bar-grid">
+      <a href="#inicio" class="bottom-bar-btn active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span>Inicio</span>
+      </a>
+      <a href="#catalogo" class="bottom-bar-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Catálogo</span>
+      </a>
+      <a href="#tiktok-vivo" class="bottom-bar-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        <span>TikTok</span>
+      </a>
+      <button type="button" class="bottom-bar-btn" id="btnBottomCartTrigger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-badge" id="bottomCartBadge" style="top:2px; right:20px;">0</span>
+        <span>Carrito</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECCIÓN 7.1: INICIO / HERO PRINCIPAL
+         ========================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Columna Izquierda: Mensaje Comercial -->
+          <div class="hero-content">
+            <div class="hero-pill">
+              <span class="dot"></span>
+              <span>Confección infantil peruana en Huancayo</span>
+              <span class="badge-supuesto">[SUPUESTO]</span>
+            </div>
+
+            <h1 class="hero-title">
+              Prendas hechas con cariño para los <span class="highlight">más pequeños</span>
+            </h1>
+
+            <p class="hero-description">
+              Descubre chompas y ropa infantil de <strong>Piojitos Kids</strong>, confeccionadas en Huancayo para acompañar cada momento con abrigo suave, resistencia y estilo.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#catalogo" class="btn btn-primary">
+                <span>Explorar catálogo</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="https://www.tiktok.com/@piojitos.kids4" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.5 6.27 6.27 0 0 0 1.95-4.49V8.71a8.16 8.16 0 0 0 4.82 1.58v-3.6z"/></svg>
+                <span>Conoce nuestro TikTok</span>
+              </a>
+            </div>
+
+            <!-- Badges de confianza -->
+            <div class="hero-trust-badges">
+              <div class="trust-item">
+                <div class="trust-icon" aria-hidden="true">🧶</div>
+                <div class="trust-text">
+                  <h4>Punto y tejido suave</h4>
+                  <p>Hilos antialérgicos para niños</p>
+                </div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon" aria-hidden="true">📍</div>
+                <div class="trust-text">
+                  <h4>Jr. Cajamarca 291</h4>
+                  <p>Huancayo, Junín - Perú</p>
+                </div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon" aria-hidden="true">🚚</div>
+                <div class="trust-text">
+                  <h4>Envíos a provincias</h4>
+                  <p>Agencias y Olva Courier</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Tarjeta Visual -->
+          <div class="hero-visual">
+            <div class="hero-floating-pill pill-huancayo">
+              <span>🇵🇪 Confeccionado en Huancayo</span>
+            </div>
+
+            <div class="hero-card-main">
+              <div class="hero-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=800&q=80"
+                  alt="Niños felices luciendo chompas y ropa infantil abrigadora de Piojitos Kids"
+                  id="heroCoverImage"
+                  loading="eager"
+                  onerror="this.onerror=null; this.src=generateFallbackSVG('Piojitos Kids Moda Infantil', '#F7C9D9');"
+                >
+              </div>
+            </div>
+
+            <div class="hero-floating-pill pill-tiktok">
+              <span>🔴 Visto en TikTok Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BARRA DE CATEGORÍAS RÁPIDAS
+         ========================================================================== -->
+    <section class="categories-bar-section" aria-label="Categorías de prendas">
+      <div class="container">
+        <div class="categories-scroll" id="quickCategoriesBar">
+          <button type="button" class="category-chip active" data-category="todos">
+            <span class="category-chip-icon">🌈</span>
+            <span>Todas las prendas</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Chompas para niñas">
+            <span class="category-chip-icon">🌸</span>
+            <span>Chompas para niñas</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Chompas para niños">
+            <span class="category-chip-icon">🦕</span>
+            <span>Chompas para niños</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Ropa infantil">
+            <span class="category-chip-icon">🧸</span>
+            <span>Ropa infantil</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Campaña escolar">
+            <span class="category-chip-icon">🎒</span>
+            <span>Campaña escolar</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Otros productos">
+            <span class="category-chip-icon">✨</span>
+            <span>Otros productos</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7.2: CATÁLOGO DIGITAL Y FILTROS INTELIGENTES
+         ========================================================================== -->
+    <section class="catalog-section" id="catalogo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Catálogo Digital Interactivo</span>
+          <h2 class="section-title">Nuestras Chompas y Colecciones Infantiles</h2>
+          <p class="section-subtitle">
+            Explora modelos, colores, tallas y precios referenciales. Arma tu pedido y consúltanos al instante por WhatsApp.
+            <span class="badge-supuesto" style="margin-left:6px;">[DATOS DEMOSTRATIVOS]</span>
+          </p>
+        </div>
+
+        <div class="catalog-layout">
+          <!-- Barra Lateral de Filtros (Desktop) -->
+          <aside class="filters-sidebar" aria-label="Filtros de búsqueda">
+            <div class="filters-header">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                <span>Filtros</span>
+              </h3>
+              <button type="button" class="btn-reset-filters" id="btnResetFilters">Limpiar filtros</button>
+            </div>
+
+            <!-- Buscador por texto -->
+            <div class="filter-group">
+              <label class="filter-title" for="searchInputDesktop">Buscar prenda</label>
+              <div class="search-input-wrap">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="text" id="searchInputDesktop" placeholder="Ej: chompa trenzada, escolar..." aria-label="Buscar productos">
+              </div>
+            </div>
+
+            <!-- Categorías -->
+            <div class="filter-group">
+              <span class="filter-title">Categoría</span>
+              <div class="filter-categories-list" id="categoryFilterList">
+                <!-- Generado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Tallas -->
+            <div class="filter-group">
+              <span class="filter-title">Talla disponible</span>
+              <div class="size-filter-grid" id="sizeFilterGrid">
+                <!-- Generado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Colores -->
+            <div class="filter-group">
+              <span class="filter-title">Color</span>
+              <div class="color-filter-flex" id="colorFilterFlex">
+                <!-- Generado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Rango de Precios -->
+            <div class="filter-group">
+              <div class="filter-title">
+                <span>Precio máximo</span>
+                <span id="priceDisplayValue" style="color:var(--color-coral-deep);">S/ 70</span>
+              </div>
+              <div class="price-range-wrap">
+                <input type="range" class="price-range-slider" id="priceRangeSlider" min="20" max="70" step="2" value="70">
+                <div class="price-range-display">
+                  <span>S/ 20</span>
+                  <span>S/ 70</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Contenido Principal del Catálogo -->
+          <div class="catalog-main-content">
+            <!-- Barra de control y ordenamiento -->
+            <div class="catalog-main-header">
+              <div class="catalog-count-text">
+                Mostrando <strong id="productsCountText">12</strong> prendas disponibles para consulta
+              </div>
+
+              <div class="catalog-controls">
+                <button type="button" class="btn-mobile-filter-open" id="btnOpenMobileFilters">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                  <span>Filtrar</span>
+                </button>
+
+                <select class="sort-select" id="sortSelect" aria-label="Ordenar productos">
+                  <option value="destacados">Destacados primero</option>
+                  <option value="precio-asc">Precio: Menor a mayor</option>
+                  <option value="precio-desc">Precio: Mayor a menor</option>
+                  <option value="nombre-asc">Nombre: A - Z</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Grilla de Productos -->
+            <div class="products-grid" id="productsGridContainer" aria-live="polite">
+              <!-- Las tarjetas se generan dinámicamente vía JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7.5: CÓMO COMPRAR (4 PASOS VISUALES)
+         ========================================================================== -->
+    <section class="how-to-buy-section" id="como-comprar">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Proceso Fácil y Rápido</span>
+          <h2 class="section-title">¿Cómo hacer tu pedido en Piojitos Kids?</h2>
+          <p class="section-subtitle">
+            Un recorrido sencillo para elegir prendas infantiles desde cualquier rincón del Perú y coordinar tu entrega personalizada.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Explora el catálogo</h4>
+            <p>Revisa nuestros modelos de chompas, ropa infantil y campaña escolar con fotos y precios referenciales.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Selecciona tus prendas</h4>
+            <p>Elige la talla, color y cantidad deseada para tus pequeños y agrégalos a tu carrito de selección.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Prepara tu pedido</h4>
+            <p>Ingresa tu nombre y tu ciudad o departamento de destino para generar un resumen claro y ordenado.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Coordina por WhatsApp</h4>
+            <p>Envíanos el resumen para confirmar disponibilidad real de stock, opciones de envío y cuentas de pago.</p>
+          </div>
+        </div>
+
+        <div class="disclaimer-banner">
+          <span style="font-size:1.2rem;">ℹ️</span>
+          <span><strong>Aviso de transparencia:</strong> La disponibilidad final, medios de pago y costos exactos de flete son confirmados directamente por el equipo comercial de Piojitos Kids mediante WhatsApp.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7.6: TIKTOK EN VIVO (INTEGRACIÓN CON TRANSMISIONES)
+         ========================================================================== -->
+    <section class="tiktok-section" id="tiktok-vivo">
+      <div class="container">
+        <div class="tiktok-grid">
+          <div class="tiktok-content">
+            <span class="section-eyebrow">Nuestro Canal de Confianza</span>
+            <h2>Complementamos nuestras transmisiones de TikTok</h2>
+            <p>
+              En TikTok mostramos la textura, caída, colores y tallas reales de nuestras prendas en vivo. Este catálogo web te permite volver a consultar los modelos con calma, revisar medidas y preparar tu pedido sin perderte de nada.
+            </p>
+
+            <div class="tiktok-profiles-card">
+              <!-- Perfil 1: Piojitos Kids Oficial -->
+              <div class="tiktok-profile-row">
+                <div class="tiktok-profile-info">
+                  <div class="tiktok-avatar">🐥</div>
+                  <div class="tiktok-names">
+                    <h4>Piojitos Kids Oficial</h4>
+                    <span>@piojitos.kids4</span>
+                  </div>
+                </div>
+                <a href="https://www.tiktok.com/@piojitos.kids4" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok btn-sm">
+                  Ver canal
+                </a>
+              </div>
+
+              <!-- Perfil 2: Mario Sánchez (Representante) -->
+              <div class="tiktok-profile-row">
+                <div class="tiktok-profile-info">
+                  <div class="tiktok-avatar">👤</div>
+                  <div class="tiktok-names">
+                    <h4>Mario Sanchez</h4>
+                    <span>@mariosanchezhuanc (Representante)</span>
+                  </div>
+                </div>
+                <a href="https://www.tiktok.com/@mariosanchezhuanc" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok btn-sm">
+                  Ver canal
+                </a>
+              </div>
+            </div>
+
+            <p style="font-size:0.88rem; color:var(--color-text-muted);">
+              💡 <em>¿Viste un modelo en la transmisión? Anota el color o haz una captura y consúltanos con el botón de WhatsApp para apartar tu pedido.</em>
+            </p>
+          </div>
+
+          <!-- Tarjeta Gráfica de TikTok -->
+          <div class="tiktok-preview-mockup">
+            <div class="tiktok-mockup-badge">
+              <span>● EN VIVO POR TIKTOK</span>
+            </div>
+            <h3 class="tiktok-mockup-title">Conoce las prendas en acción</h3>
+            <ul class="tiktok-mockup-features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F48C8C" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Aprecia la elasticidad y suavidad del tejido huancaíno</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F48C8C" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Recomendaciones de tallas exactas según la edad del niño</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F48C8C" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Novedades semanales y ofertas por docena para emprendedores</span>
+              </li>
+            </ul>
+
+            <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #333; display:flex; gap:10px; align-items:center;">
+              <span style="font-size:1.8rem;">📦</span>
+              <div style="font-size:0.85rem; color:#9CA3AF;">
+                Embalaje cuidadoso y envíos seguros hacia Lima, Arequipa, Cusco, Trujillo, Puno y todo el Perú.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7.4: NOSOTROS
+         ========================================================================== -->
+    <section class="about-section" id="nosotros">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Columna Izquierda: Información Empresarial -->
+          <div class="about-text-content">
+            <span class="section-eyebrow">Identidad y Confección</span>
+            <h2 class="section-title">Sobre Piojitos Kids</h2>
+
+            <!-- Texto Oficial Confirmado -->
+            <p class="official-statement">
+              "Piojitos Kids es una empresa ubicada en Huancayo, dedicada principalmente a la fabricación y comercialización de prendas de vestir para niños y niñas, especialmente chompas. A través de TikTok y WhatsApp, acerca sus productos a clientes de Huancayo y otras regiones del Perú."
+            </p>
+
+            <div class="about-data-list">
+              <div class="about-data-item">
+                <div class="about-data-label">Razón Social / RUC</div>
+                <div class="about-data-val">RUC: 10201008811</div>
+              </div>
+              <div class="about-data-item">
+                <div class="about-data-label">Representante</div>
+                <div class="about-data-val">Mario Sanchez</div>
+              </div>
+              <div class="about-data-item">
+                <div class="about-data-label">Ubicación de Talleres</div>
+                <div class="about-data-val">Jr. Cajamarca 291, Huancayo</div>
+              </div>
+              <div class="about-data-item">
+                <div class="about-data-label">Especialidad</div>
+                <div class="about-data-val">Chompas y Tejidos Infantiles</div>
+              </div>
+            </div>
+
+            <p style="font-size:0.92rem; color:var(--color-text-muted);">
+              Fabricamos con maquinarias de tejido especializadas e insumos hipoalergénicos que garantizan abrigo térmico sin irritar la piel sensible de los más pequeños.
+            </p>
+          </div>
+
+          <!-- Columna Derecha: Tarjeta Visual de Huancayo -->
+          <div class="about-visual">
+            <div style="aspect-ratio: 4/3; border-radius:var(--radius-lg); overflow:hidden; background:#FDE8E8;">
+              <img
+                src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80"
+                alt="Taller de confección y prendas infantiles tejidas en Huancayo"
+                loading="lazy"
+                onerror="this.onerror=null; this.src=generateFallbackSVG('Confecciones Huancayo', '#DDD3FA');"
+              >
+            </div>
+            <div class="about-badge-huancayo">
+              <span style="font-size:1.6rem;">🏔️</span>
+              <div>
+                <strong style="display:block; font-size:0.95rem;">Tradición Textil del Valle del Mantaro</strong>
+                <span style="font-size:0.8rem; color:var(--color-text-muted);">Prendas abrigadoras pensadas para el clima andino y de todo el Perú.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7.7: CONTACTO Y ENVÍOS A REGIONES
+         ========================================================================== -->
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Atención y Despachos</span>
+          <h2 class="section-title">Contáctanos y Coordina tu Compra</h2>
+          <p class="section-subtitle">
+            Estamos en Huancayo para atenderte localmente y despachamos pedidos a nivel nacional.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Tarjeta de Datos Comerciales -->
+          <div class="contact-card">
+            <h3>
+              <span>🏢</span>
+              <span>Datos Comerciales</span>
+            </h3>
+
+            <div class="contact-info-list">
+              <div class="contact-info-row">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                  <strong>Dirección Comercial:</strong>
+                  <p>Jr. Cajamarca 291, Huancayo, Junín, Perú.</p>
+                </div>
+              </div>
+
+              <div class="contact-info-row">
+                <div class="contact-info-icon">📑</div>
+                <div>
+                  <strong>RUC:</strong>
+                  <p>10201008811</p>
+                </div>
+              </div>
+
+              <div class="contact-info-row">
+                <div class="contact-info-icon">👤</div>
+                <div>
+                  <strong>Representante:</strong>
+                  <p>Mario Sanchez</p>
+                </div>
+              </div>
+
+              <div class="contact-info-row">
+                <div class="contact-info-icon">📱</div>
+                <div>
+                  <strong>Canales Oficiales:</strong>
+                  <p>TikTok (@piojitos.kids4) y WhatsApp.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón de consulta directa -->
+            <button type="button" class="btn btn-whatsapp" id="btnContactDirectWhatsapp" style="width:100%;">
+              <span>Consultar por WhatsApp</span>
+            </button>
+          </div>
+
+          <!-- Guía para Clientes de Provincias -->
+          <div class="contact-card">
+            <h3>
+              <span>🚚</span>
+              <span>Envíos a Todo el Perú</span>
+            </h3>
+
+            <p style="font-size:0.92rem; color:var(--color-text-muted); margin-bottom:1rem;">
+              Coordinamos con las principales agencias de transporte terrestre y servicios de mensajería para que tus pedidos lleguen con total seguridad:
+            </p>
+
+            <div class="shipping-guide-box">
+              <strong style="font-size:0.9rem;">Agencias habituales de despacho desde Huancayo:</strong>
+              <div class="shipping-pills-row">
+                <span class="shipping-agency-chip">📦 Shalom Empresarial</span>
+                <span class="shipping-agency-chip">📮 Olva Courier</span>
+                <span class="shipping-agency-chip">🚌 Marvisur</span>
+                <span class="shipping-agency-chip">🚍 Agencias del Terminal Huancayo</span>
+              </div>
+            </div>
+
+            <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--color-text-muted); line-height:1.5;">
+              <strong>¿Cómo funciona el envío?</strong> Una vez preparado y confirmado tu pedido por WhatsApp, te facilitamos el comprobante o remito con número de seguimiento para que retires tu paquete cómodamente en tu agencia local.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL: DETALLE DEL PRODUCTO (SECCIÓN 7.3)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="productModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="product-modal-dialog">
+      <button type="button" class="modal-close-btn" id="btnModalClose" aria-label="Cerrar ventana de detalle">&times;</button>
+
+      <div class="modal-grid">
+        <!-- Galería Modal -->
+        <div class="modal-gallery">
+          <div class="modal-main-img-wrap">
+            <img src="" alt="" id="modalMainImg" class="modal-main-img">
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbsRow">
+            <!-- Miniaturas dinámicas -->
+          </div>
+        </div>
+
+        <!-- Información y Selectores Modal -->
+        <div class="modal-info">
+          <div class="modal-meta-top">
+            <span class="badge-tag" id="modalProductBadge">Novedad</span>
+            <span class="product-category-meta" id="modalProductCategory">Categoría</span>
+          </div>
+
+          <h2 class="modal-product-title" id="modalProductTitle">Nombre del Producto</h2>
+
+          <div class="modal-price-box">
+            <span class="modal-price-value" id="modalProductPrice">S/ 45.00</span>
+            <span class="modal-price-ref">Precio referencial unitario [SUPUESTO]</span>
+          </div>
+
+          <p class="modal-desc" id="modalProductDesc">Descripción del producto...</p>
+
+          <!-- Selector de Tallas -->
+          <div class="selector-block">
+            <div class="selector-label">
+              <span>Selecciona una talla:</span>
+              <span class="selected-value" id="modalSelectedSizeText">Talla 6</span>
+            </div>
+            <div class="sizes-selector-group" id="modalSizesGroup">
+              <!-- Botones de talla dinámicos -->
+            </div>
+          </div>
+
+          <!-- Selector de Colores -->
+          <div class="selector-block">
+            <div class="selector-label">
+              <span>Selecciona un color:</span>
+              <span class="selected-value" id="modalSelectedColorText">Rosado</span>
+            </div>
+            <div class="colors-selector-group" id="modalColorsGroup">
+              <!-- Botones de color dinámicos -->
+            </div>
+          </div>
+
+          <!-- Selector de Cantidad -->
+          <div class="quantity-row">
+            <span class="selector-label" style="margin-bottom:0;">Cantidad:</span>
+            <div class="quantity-control">
+              <button type="button" class="btn-qty" id="btnModalQtyMinus" aria-label="Disminuir cantidad">-</button>
+              <span class="qty-number" id="modalQtyNumber">1</span>
+              <button type="button" class="btn-qty" id="btnModalQtyPlus" aria-label="Aumentar cantidad">+</button>
+            </div>
+          </div>
+
+          <!-- Aviso de stock demostrativo -->
+          <div class="modal-stock-notice">
+            <span>ℹ️</span>
+            <span id="modalStockText">Disponibilidad referencial sujeta a confirmación por WhatsApp [SUPUESTO]</span>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="modal-actions">
+            <button type="button" class="btn btn-primary" id="btnModalAddToCart">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Agregar al carrito</span>
+            </button>
+            <button type="button" class="btn btn-whatsapp" id="btnModalDirectWhatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar esta prenda por WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DRAWER: CARRITO DE COMPRAS (SECCIÓN 6.B)
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Tu Selección</span>
+      </h3>
+      <button type="button" id="btnCartClose" style="font-size:1.6rem; color:var(--color-dark-text);" aria-label="Cerrar carrito">&times;</button>
+    </div>
+
+    <!-- Lista de Artículos en el Carrito -->
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Se generan dinámicamente con JavaScript -->
+    </div>
+
+    <!-- Resumen y Acciones del Carrito -->
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-summary-row">
+        <span>Prendas seleccionadas:</span>
+        <strong id="cartSummaryItemsCount">0</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>Tipo de precios:</span>
+        <span>Referenciales [SUPUESTO]</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Total referencial:</span>
+        <span class="total-amount" id="cartTotalAmount">S/ 0.00</span>
+      </div>
+
+      <button type="button" class="btn btn-whatsapp" id="btnOpenOrderModal" style="width:100%; font-size:1.05rem;" disabled>
+        <span>Preparar pedido para WhatsApp</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+
+      <button type="button" class="btn btn-secondary btn-sm" id="btnClearCart" style="width:100%; margin-top:8px;">
+        Vaciar selección
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MODAL: FORMULARIO Y PREPARACIÓN DE PEDIDO POR WHATSAPP (SECCIÓN 5)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="orderModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+    <div class="order-modal-dialog">
+      <button type="button" class="modal-close-btn" id="btnOrderModalClose" aria-label="Cerrar ventana de pedido">&times;</button>
+
+      <h2 id="orderModalTitle" style="font-size:1.5rem; margin-bottom:0.5rem;">Preparar Pedido para WhatsApp</h2>
+      <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:1.5rem;">
+        Completa tus datos para estructurar automáticamente el mensaje con tus prendas seleccionadas.
+      </p>
+
+      <!-- Formulario de Pedido -->
+      <form id="orderPreparationForm" novalidate>
+        <div class="order-form-group">
+          <label class="order-form-label" for="orderCustomerName">Tu Nombre completo *</label>
+          <input type="text" class="order-form-input" id="orderCustomerName" placeholder="Ej: María López" required>
+        </div>
+
+        <div class="order-form-group">
+          <label class="order-form-label" for="orderCustomerCity">Ciudad o Departamento de destino *</label>
+          <input type="text" class="order-form-input" id="orderCustomerCity" placeholder="Ej: Lima, Huancayo, Arequipa, Cusco..." required>
+        </div>
+
+        <div class="order-form-group">
+          <label class="order-form-label" for="orderNotes">Observaciones o consultas adicionales (Opcional)</label>
+          <textarea class="order-form-textarea" id="orderNotes" rows="2" placeholder="Ej: Deseo consultar por envío mediante agencia Shalom o consultar por tallas especiales..."></textarea>
+        </div>
+      </form>
+
+      <!-- Vista previa del mensaje formateado -->
+      <label class="order-form-label">Vista previa del mensaje a enviar:</label>
+      <div class="whatsapp-preview-box" id="whatsappMessagePreview">
+        <!-- Generado dinámicamente -->
+      </div>
+
+      <!-- Alerta cuando el número de WhatsApp no está configurado -->
+      <div class="whatsapp-config-alert" id="whatsappPendingAlert">
+        <div class="whatsapp-config-alert-header">
+          <span>⚠️</span>
+          <span>Configuración de WhatsApp pendiente</span>
+        </div>
+        <div>
+          Como no se ha proporcionado el número oficial de WhatsApp para Piojitos Kids, no se enviará a contactos desconocidos.
+          Puedes <strong>copiar el mensaje generado</strong> para enviarlo manualmente o <strong>probar ingresando un número de prueba</strong>.
+        </div>
+      </div>
+
+      <!-- Botones de Acción del Pedido -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <button type="button" class="btn btn-secondary" id="btnCopyOrderMessage">
+          <span>📋 Copiar mensaje al portapapeles</span>
+        </button>
+
+        <button type="button" class="btn btn-whatsapp" id="btnSendWhatsappOrder">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span id="btnSendWhatsappText">Abrir WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: INDICADORES DE VALIDACIÓN / MÉTRICAS DEMOSTRATIVAS (SECCIÓN 11)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="metricsModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="metricsModalTitle">
+    <div class="metrics-modal-dialog">
+      <button type="button" class="modal-close-btn" id="btnMetricsModalClose" aria-label="Cerrar modal de métricas">&times;</button>
+
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+        <span class="badge-supuesto" style="background:#DBEAFE; color:#1E40AF; border-color:#BFDBFE;">MODO DE PRUEBA LOCAL</span>
+        <span style="font-size:0.8rem; color:var(--color-text-muted);">Almacenado exclusivamente en localStorage</span>
+      </div>
+
+      <h2 id="metricsModalTitle" style="font-size:1.6rem; margin-bottom:0.5rem;">Panel de Validación Demostrativa</h2>
+      <p style="font-size:0.9rem; color:var(--color-text-muted);">
+        Registra la interacción del comprador con el catálogo web para contrastar la hipótesis de conversión frente a la venta exclusiva por transmisiones en TikTok.
+      </p>
+
+      <!-- Cuadrícula de Contadores -->
+      <div class="metrics-grid-counters">
+        <div class="metric-counter-card">
+          <div class="metric-counter-val" id="metricValDetalles">0</div>
+          <div class="metric-counter-label">Prendas consultadas ("Ver detalles")</div>
+        </div>
+
+        <div class="metric-counter-card">
+          <div class="metric-counter-val" id="metricValCarrito">0</div>
+          <div class="metric-counter-label">Prendas agregadas al carrito</div>
+        </div>
+
+        <div class="metric-counter-card">
+          <div class="metric-counter-val" id="metricValClicsWA">0</div>
+          <div class="metric-counter-label">Clics en botones de WhatsApp</div>
+        </div>
+
+        <div class="metric-counter-card">
+          <div class="metric-counter-val" id="metricValPedidos">0</div>
+          <div class="metric-counter-label">Pedidos preparados con formulario</div>
+        </div>
+      </div>
+
+      <!-- Tabla de Prendas con Mayor Interacción -->
+      <h3 style="font-size:1.1rem; margin-top:1.5rem; margin-bottom:0.5rem;">Prendas con Mayor Interacción</h3>
+      <table class="metrics-table">
+        <thead>
+          <tr>
+            <th>Prenda infantil</th>
+            <th>Categoría</th>
+            <th>Vistas detalle</th>
+            <th>Veces en carrito</th>
+          </tr>
+        </thead>
+        <tbody id="metricsTopProductsTableBody">
+          <!-- Generado dinámicamente -->
+        </tbody>
+      </table>
+
+      <!-- Reiniciar Métricas -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--color-border);">
+        <span style="font-size:0.8rem; color:var(--color-text-muted);">
+          Estas métricas son simuladas y no representan ventas reales confirmadas.
+        </span>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnResetMetrics">
+          🔄 Reiniciar métricas
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CONFIGURACIÓN RÁPIDA DE WHATSAPP
+       ========================================================================== -->
+  <div class="modal-backdrop" id="configModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="configModalTitle">
+    <div class="config-modal-dialog">
+      <button type="button" class="modal-close-btn" id="btnConfigModalClose" aria-label="Cerrar ajustes">&times;</button>
+
+      <h2 id="configModalTitle" style="font-size:1.4rem; margin-bottom:0.5rem;">Ajustes de WhatsApp</h2>
+      <p style="font-size:0.88rem; color:var(--color-text-muted); margin-bottom:1.25rem;">
+        Permite definir o cambiar el número de WhatsApp oficial o de prueba sin modificar el código fuente.
+      </p>
+
+      <div class="order-form-group">
+        <label class="order-form-label" for="configWhatsappInput">Número de WhatsApp (con código de país):</label>
+        <input type="text" class="order-form-input" id="configWhatsappInput" placeholder="Ej: +51 987654321 o dejar vacío">
+        <span style="font-size:0.75rem; color:var(--color-text-muted); display:block; margin-top:4px;">
+          Actualmente: <strong id="configCurrentNumberStatus">No configurado (Vacío)</strong>
+        </span>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:1.5rem;">
+        <button type="button" class="btn btn-primary" id="btnSaveWhatsappConfig" style="flex:1;">
+          Guardar número
+        </button>
+        <button type="button" class="btn btn-secondary" id="btnClearWhatsappConfig">
+          Dejar vacío
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Marca y RUC -->
+        <div class="footer-col">
+          <div class="logo-main" style="margin-bottom:0.75rem;">
+            <div class="logo-icon" style="background:#fff; color:#000;">🐥</div>
+            <span class="logo-text" style="color:#fff;">Piojitos <span style="color:var(--color-primary-pink);">Kids</span></span>
+          </div>
+          <p style="font-size:0.88rem; color:#9CA3AF; margin-bottom:1rem;">
+            Empresa peruana dedicada a la fabricación y comercialización de chompas y prendas de vestir para niños y niñas.
+          </p>
+          <div style="font-size:0.82rem; color:#D1D5DB;">
+            <strong>RUC:</strong> 10201008811<br>
+            <strong>Representante:</strong> Mario Sanchez<br>
+            <strong>Ubicación:</strong> Jr. Cajamarca 291, Huancayo, Junín
+          </div>
+        </div>
+
+        <!-- Col 2: Secciones -->
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo de chompas</a></li>
+            <li><a href="#como-comprar">Cómo comprar</a></li>
+            <li><a href="#tiktok-vivo">TikTok en vivo</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto y envíos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categorías -->
+        <div class="footer-col">
+          <h4>Prendas Infantiles</h4>
+          <ul class="footer-links-list">
+            <li><a href="#catalogo" onclick="applyCategoryFilter('Chompas para niñas')">Chompas para niñas</a></li>
+            <li><a href="#catalogo" onclick="applyCategoryFilter('Chompas para niños')">Chompas para niños</a></li>
+            <li><a href="#catalogo" onclick="applyCategoryFilter('Ropa infantil')">Ropa infantil</a></li>
+            <li><a href="#catalogo" onclick="applyCategoryFilter('Campaña escolar')">Campaña escolar</a></li>
+            <li><a href="#catalogo" onclick="applyCategoryFilter('Otros productos')">Otros productos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Redes Oficiales Confirmadas -->
+        <div class="footer-col">
+          <h4>Canales Oficiales</h4>
+          <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:1rem;">
+            Síguenos en nuestras transmisiones en vivo para conocer nuevos modelos:
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="https://www.tiktok.com/@piojitos.kids4" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok btn-sm" style="justify-content:flex-start;">
+              <span>TikTok @piojitos.kids4</span>
+            </a>
+            <a href="https://www.tiktok.com/@mariosanchezhuanc" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok btn-sm" style="justify-content:flex-start;">
+              <span>TikTok Representante @mariosanchezhuanc</span>
+            </a>
+          </div>
+          <p style="font-size:0.75rem; color:#6B7280; margin-top:1rem;">
+            * Nota: No disponemos de perfiles oficiales en Facebook o Instagram.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Piojitos Kids. Todos los derechos reservados. Jr. Cajamarca 291, Huancayo - Perú.
+        </div>
+        <div>
+          <span class="badge-supuesto" style="background:#374151; color:#F9FAFB; border-color:#4B5563;">
+            PROTOTIPO DEMOSTRATIVO CON SUPUESTOS IDENTIFICADOS
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <button type="button" class="floating-whatsapp-btn" id="floatingWhatsappBtn" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+  </button>
+
+  <!-- Contenedor de Alertas Toast -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive"></div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT MODULAR Y AUTOCONTENIDO (VANILLA JS ES6+)
+       ========================================================================== -->
+  <script>
+    /**
+     * PIOJITOS KIDS - ARQUITECTURA MODULAR JAVASCRIPT
+     * Desarrollado para cumplir con todas las especificaciones comerciales,
+     * diseño UX/UI accesible y flujo de ventas por WhatsApp.
+     */
+
+    // 1. CONFIGURACIÓN DEL NEGOCIO
+    const CONFIG = {
+      // Número oficial de WhatsApp: se inicia vacío según instrucción obligatoria.
+      // Puede ser configurado desde el panel de ajustes o persistirse en localStorage.
+      DEFAULT_WHATSAPP_NUMBER: "",
+      STORAGE_KEYS: {
+        CART: "piojitos_cart_items",
+        METRICS: "piojitos_validation_metrics",
+        WHATSAPP_CONFIG: "piojitos_configured_whatsapp"
+      },
+      STORE_INFO: {
+        name: "Piojitos Kids",
+        representative: "Mario Sanchez",
+        ruc: "10201008811",
+        address: "Jr. Cajamarca 291, Huancayo, Perú",
+        tiktokOfficial: "https://www.tiktok.com/@piojitos.kids4",
+        tiktokRep: "https://www.tiktok.com/@mariosanchezhuanc"
+      }
+    };
+
+    // Obtener número de WhatsApp activo (o vacío si no está configurado)
+    function getActiveWhatsappNumber() {
+      const stored = localStorage.getItem(CONFIG.STORAGE_KEYS.WHATSAPP_CONFIG);
+      return (stored !== null) ? stored : CONFIG.DEFAULT_WHATSAPP_NUMBER;
+    }
+
+    function setActiveWhatsappNumber(number) {
+      if (number && number.trim() !== "") {
+        localStorage.setItem(CONFIG.STORAGE_KEYS.WHATSAPP_CONFIG, number.trim());
+      } else {
+        localStorage.removeItem(CONFIG.STORAGE_KEYS.WHATSAPP_CONFIG);
+      }
+    }
+
+    // 2. GENERADOR DE IMÁGENES SVG DE RESPALDO (GRACEFUL FALLBACK)
+    // Garantiza que ninguna tarjeta se vea rota si la imagen remota falla o se trabaja sin internet
+    function generateFallbackSVG(title, bgColor = "#F7C9D9") {
+      const safeTitle = encodeURIComponent(title.substring(0, 24));
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="${bgColor}" />
+              <stop offset="100%" stop-color="#FFF9F2" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grad)" />
+          <circle cx="300" cy="240" r="120" fill="#FFFFFF" opacity="0.6" />
+          <path d="M220 220 C220 180, 380 180, 380 220 L420 320 L370 340 L350 300 L350 380 L250 380 L250 300 L230 340 L180 320 Z" fill="#F48C8C" opacity="0.85" />
+          <text x="300" y="440" font-family="sans-serif" font-size="24" font-weight="bold" fill="#33343A" text-anchor="middle">${safeTitle}</text>
+          <text x="300" y="480" font-family="sans-serif" font-size="16" fill="#6B7280" text-anchor="middle">Piojitos Kids • Huancayo</text>
+        </svg>
+      `;
+      return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+    }
+
+    // 3. DATOS DE DEMOSTRACIÓN (12+ PRODUCTOS REPRESENTATIVOS [SUPUESTO])
+    const PRODUCTS_DATA = [
+      {
+        id: "CHOM-01",
+        nombre: "Chompa Trenzada Infantil 'Copito de Algodón'",
+        categoria: "Chompas para niñas",
+        descripcion: "Chompa tejida en punto trenzado fino con hilo antialérgico ultra suave. Diseñada para proteger del frío del valle sin picar la piel.",
+        precio: 45.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["2", "4", "6", "8", "10"],
+        colores: [
+          { nombre: "Rosado Pastel", hex: "#F7C9D9" },
+          { nombre: "Lila Claro", hex: "#DDD3FA" },
+          { nombre: "Blanco Crema", hex: "#FFF9F2" }
+        ],
+        destacado: true,
+        etiqueta: "Destacado",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "CHOM-02",
+        nombre: "Chompa Clásica Cuello Redondo 'Andinito'",
+        categoria: "Chompas para niños",
+        descripcion: "Chompa abrigadora con acabado en rib en cuello y puños. Tejido resistente para el uso diario y juegos infantiles.",
+        precio: 42.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["4", "6", "8", "10", "12"],
+        colores: [
+          { nombre: "Azul Marino", hex: "#1E3A8A" },
+          { nombre: "Plomo Jaspeado", hex: "#9CA3AF" },
+          { nombre: "Verde Olivo", hex: "#4B5E43" }
+        ],
+        destacado: true,
+        etiqueta: "Nuevo",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "CHOM-03",
+        nombre: "Cardigan con Botones de Madera 'Bambi'",
+        categoria: "Chompas para niñas",
+        descripcion: "Hermoso cardigan abierto con botones estilo madera rústica y cuello en V suave. Ideal para combinar con vestidos o blusas.",
+        precio: 48.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["2", "4", "6", "8"],
+        colores: [
+          { nombre: "Coral Suave", hex: "#F48C8C" },
+          { nombre: "Crema Cálido", hex: "#FFF9F2" },
+          { nombre: "Mostaza Pastel", hex: "#FDE68A" }
+        ],
+        destacado: true,
+        etiqueta: "Destacado",
+        disponibilidadDemo: "Pocas unidades referenciales"
+      },
+      {
+        id: "CHOM-04",
+        nombre: "Chompa con Capucha y Bolsillo 'Osito Huanca'",
+        categoria: "Chompas para niños",
+        descripcion: "Chompa con capucha reforzada y bolsillo delantero tipo canguro. Tejido grueso de alta densidad para viajes y mañanas frías.",
+        precio: 52.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1543332164-6e82f355badc?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["4", "6", "8", "10", "12", "14"],
+        colores: [
+          { nombre: "Mostaza", hex: "#EAB308" },
+          { nombre: "Azul Marino", hex: "#1E3A8A" },
+          { nombre: "Rojo Carmín", hex: "#DC2626" }
+        ],
+        destacado: false,
+        etiqueta: "Nuevo",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "CHOM-05",
+        nombre: "Chompa Escolar Oficial Cuello V Huancayo",
+        categoria: "Campaña escolar",
+        descripcion: "Confeccionada con hilo dralón antipeeling de alta resistencia escolar. No encoge ni destiñe con los lavados continuos.",
+        precio: 38.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["6", "8", "10", "12", "14", "16"],
+        colores: [
+          { nombre: "Azul Marino Escolar", hex: "#0F172A" },
+          { nombre: "Guinda Escolar", hex: "#881337" },
+          { nombre: "Plomo Rata", hex: "#4B5563" }
+        ],
+        destacado: true,
+        etiqueta: "Temporada escolar",
+        disponibilidadDemo: "Stock disponible para campaña"
+      },
+      {
+        id: "CHOM-06",
+        nombre: "Chaleco Escolar Institucional Punto Inglés",
+        categoria: "Campaña escolar",
+        descripcion: "Chaleco sin mangas para uso escolar con corte anatómico. Brinda libertad de movimiento en clases y excelente abrigo al pecho.",
+        precio: 32.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["6", "8", "10", "12", "14"],
+        colores: [
+          { nombre: "Azul Marino Escolar", hex: "#0F172A" },
+          { nombre: "Guinda Institucional", hex: "#881337" }
+        ],
+        destacado: false,
+        etiqueta: "Temporada escolar",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "ROPA-01",
+        nombre: "Conjunto Polar Abrigador 'Nube de Algodón'",
+        categoria: "Ropa infantil",
+        descripcion: "Conjunto de 2 piezas (polera con capucha y pantalón jogger con puño). Interior suavemente afelpado para máximo confort.",
+        precio: 58.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["2", "4", "6", "8"],
+        colores: [
+          { nombre: "Rosa Pastel", hex: "#F7C9D9" },
+          { nombre: "Celeste Cielo", hex: "#BAE6FD" },
+          { nombre: "Gris Perla", hex: "#E5E7EB" }
+        ],
+        destacado: false,
+        etiqueta: "Nuevo",
+        disponibilidadDemo: "Pocas unidades referenciales"
+      },
+      {
+        id: "ROPA-02",
+        nombre: "Vestidito Tejido con Volantes 'Margarita'",
+        categoria: "Ropa infantil",
+        descripcion: "Vestido tejido con detalles en ondas en falda y mangas. Ideal para ocasiones especiales, cumpleaños o paseos familiares.",
+        precio: 49.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["2", "4", "6", "8"],
+        colores: [
+          { nombre: "Lila Pastel", hex: "#DDD3FA" },
+          { nombre: "Coral Cálido", hex: "#F48C8C" }
+        ],
+        destacado: true,
+        etiqueta: "Destacado",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "CHOM-07",
+        nombre: "Chompa Jacquard Infantil Diseños Andinos",
+        categoria: "Chompas para niñas",
+        descripcion: "Diseño jacquard en pechera con grecas geométricas tradicionales. Una prenda emblemática del catálogo de Piojitos Kids.",
+        precio: 46.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["4", "6", "8", "10"],
+        colores: [
+          { nombre: "Crema y Fucsia", hex: "#F48C8C" },
+          { nombre: "Lila y Blanco", hex: "#DDD3FA" }
+        ],
+        destacado: false,
+        etiqueta: "Destacado",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "CHOM-08",
+        nombre: "Chompa Deportiva Bicolor Cuello Tortuga",
+        categoria: "Chompas para niños",
+        descripcion: "Chompa moderna en bloques de color con cuello semi-alto para evitar el ingreso del viento helado.",
+        precio: 44.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["6", "8", "10", "12"],
+        colores: [
+          { nombre: "Azul y Mostaza", hex: "#1E3A8A" },
+          { nombre: "Rojo y Plomo", hex: "#DC2626" }
+        ],
+        destacado: false,
+        etiqueta: "Nuevo",
+        disponibilidadDemo: "Stock disponible para consulta"
+      },
+      {
+        id: "OTRO-01",
+        nombre: "Ponchito Tradicional Infantil Tejido",
+        categoria: "Otros productos",
+        descripcion: "Poncho infantil con flequillos y cuello tortuga abrigador. Prenda versátil y representativa de nuestra textilería huancaína.",
+        precio: 55.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["Talla Única Infantil (4 a 8 años)"],
+        colores: [
+          { nombre: "Multicolor Huanca", hex: "#F48C8C" },
+          { nombre: "Tierra y Beige", hex: "#D97706" }
+        ],
+        destacado: false,
+        etiqueta: "Destacado",
+        disponibilidadDemo: "Pocas unidades referenciales"
+      },
+      {
+        id: "OTRO-02",
+        nombre: "Set Gorrito con Orejitas + Bufanda Térmica",
+        categoria: "Otros productos",
+        descripcion: "Juego tejido para los más pequeños. Gorro anatómico con orejitas tiernas y bufanda acolchada que no desprende pelusa.",
+        precio: 28.00,
+        imagenes: [
+          "https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=800&q=80"
+        ],
+        tallas: ["0 a 2 años", "2 a 6 años"],
+        colores: [
+          { nombre: "Rosa Pastel", hex: "#F7C9D9" },
+          { nombre: "Lila Suave", hex: "#DDD3FA" },
+          { nombre: "Crema Natural", hex: "#FFF9F2" }
+        ],
+        destacado: false,
+        etiqueta: "Nuevo",
+        disponibilidadDemo: "Stock disponible para consulta"
+      }
+    ];
+
+    // 4. ALMACENAMIENTO DE MÉTRICAS DEMOSTRATIVAS (LOCALSTORAGE)
+    const METRICS_STORE = {
+      get() {
+        const defaultMetrics = {
+          detallesClics: 0,
+          carritoAgregados: 0,
+          whatsappClics: 0,
+          pedidosPreparados: 0,
+          productosStats: {} // id: { nombre, detalles: 0, carrito: 0 }
+        };
+        try {
+          const data = localStorage.getItem(CONFIG.STORAGE_KEYS.METRICS);
+          return data ? JSON.parse(data) : defaultMetrics;
+        } catch (e) {
+          return defaultMetrics;
+        }
+      },
+      save(metrics) {
+        try {
+          localStorage.setItem(CONFIG.STORAGE_KEYS.METRICS, JSON.stringify(metrics));
+        } catch (e) {
+          console.error("Error guardando métricas locales", e);
+        }
+      },
+      trackDetalle(productId) {
+        const m = this.get();
+        m.detallesClics++;
+        if (!m.productosStats[productId]) {
+          const p = PRODUCTS_DATA.find(x => x.id === productId);
+          m.productosStats[productId] = { nombre: p ? p.nombre : productId, detalles: 0, carrito: 0, categoria: p ? p.categoria : "" };
+        }
+        m.productosStats[productId].detalles++;
+        this.save(m);
+        UI_CONTROLLER.renderMetricsModal();
+      },
+      trackCarrito(productId) {
+        const m = this.get();
+        m.carritoAgregados++;
+        if (!m.productosStats[productId]) {
+          const p = PRODUCTS_DATA.find(x => x.id === productId);
+          m.productosStats[productId] = { nombre: p ? p.nombre : productId, detalles: 0, carrito: 0, categoria: p ? p.categoria : "" };
+        }
+        m.productosStats[productId].carrito++;
+        this.save(m);
+        UI_CONTROLLER.renderMetricsModal();
+      },
+      trackWhatsappClic() {
+        const m = this.get();
+        m.whatsappClics++;
+        this.save(m);
+        UI_CONTROLLER.renderMetricsModal();
+      },
+      trackPedidoPreparado() {
+        const m = this.get();
+        m.pedidosPreparados++;
+        this.save(m);
+        UI_CONTROLLER.renderMetricsModal();
+      },
+      reset() {
+        localStorage.removeItem(CONFIG.STORAGE_KEYS.METRICS);
+        UI_CONTROLLER.renderMetricsModal();
+        UI_CONTROLLER.showToast("Métricas demostrativas reiniciadas", "🔄");
+      }
+    };
+
+    // 5. GESTIÓN DEL CARRITO DE COMPRAS (LOCALSTORAGE)
+    const CART_STORE = {
+      get() {
+        try {
+          const data = localStorage.getItem(CONFIG.STORAGE_KEYS.CART);
+          return data ? JSON.parse(data) : [];
+        } catch (e) {
+          return [];
+        }
+      },
+      save(cart) {
+        try {
+          localStorage.setItem(CONFIG.STORAGE_KEYS.CART, JSON.stringify(cart));
+          this.updateBadges();
+        } catch (e) {
+          console.error("Error guardando carrito", e);
+        }
+      },
+      addItem(product, talla, color, cantidad = 1) {
+        const cart = this.get();
+        // Clave única basada en id + talla + color
+        const existingIndex = cart.findIndex(item =>
+          item.id === product.id && item.talla === talla && item.color === color
+        );
+
+        if (existingIndex > -1) {
+          cart[existingIndex].cantidad += cantidad;
+        } else {
+          cart.push({
+            id: product.id,
+            nombre: product.nombre,
+            categoria: product.categoria,
+            precio: product.precio,
+            imagen: product.imagenes[0] || "",
+            talla: talla,
+            color: color,
+            cantidad: cantidad
+          });
+        }
+
+        this.save(cart);
+        METRICS_STORE.trackCarrito(product.id);
+        UI_CONTROLLER.renderCart();
+        UI_CONTROLLER.showToast(`Agregado: ${product.nombre} (Talla ${talla})`, "🛍️");
+      },
+      updateQuantity(index, delta) {
+        const cart = this.get();
+        if (cart[index]) {
+          cart[index].cantidad += delta;
+          if (cart[index].cantidad <= 0) {
+            cart.splice(index, 1);
+          }
+          this.save(cart);
+          UI_CONTROLLER.renderCart();
+        }
+      },
+      removeItem(index) {
+        const cart = this.get();
+        if (cart[index]) {
+          const removedName = cart[index].nombre;
+          cart.splice(index, 1);
+          this.save(cart);
+          UI_CONTROLLER.renderCart();
+          UI_CONTROLLER.showToast(`Eliminado del carrito: ${removedName}`, "🗑️");
+        }
+      },
+      clear() {
+        this.save([]);
+        UI_CONTROLLER.renderCart();
+        UI_CONTROLLER.showToast("Carrito vaciado", "🧹");
+      },
+      getTotal() {
+        const cart = this.get();
+        return cart.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+      },
+      getTotalItemsCount() {
+        const cart = this.get();
+        return cart.reduce((acc, item) => acc + item.cantidad, 0);
+      },
+      updateBadges() {
+        const count = this.getTotalItemsCount();
+        const headerBadge = document.getElementById("cartBadgeCount");
+        const bottomBadge = document.getElementById("bottomCartBadge");
+        if (headerBadge) headerBadge.textContent = count;
+        if (bottomBadge) bottomBadge.textContent = count;
+      }
+    };
+
+    // 6. ESTADO DE LOS FILTROS
+    const FILTER_STATE = {
+      search: "",
+      category: "todos",
+      size: null,
+      color: null,
+      maxPrice: 70,
+      sortBy: "destacados"
+    };
+
+    // 7. SERVICIO Y FORMATO DE MENSAJES DE WHATSAPP
+    const WHATSAPP_SERVICE = {
+      // Estructura oficial del mensaje de pedido
+      generateOrderMessage(cart, customerName, customerCity, observations = "") {
+        let msg = `Hola, Piojitos Kids. Me gustaría consultar por el siguiente pedido:\n\n`;
+
+        cart.forEach((item, index) => {
+          const subtotal = item.precio * item.cantidad;
+          msg += `Producto: ${item.nombre}\n`;
+          msg += `Talla: ${item.talla}\n`;
+          msg += `Color: ${item.color}\n`;
+          msg += `Cantidad: ${item.cantidad}\n`;
+          msg += `Precio referencial unitario: S/ ${item.precio.toFixed(2)}\n`;
+          msg += `Subtotal referencial: S/ ${subtotal.toFixed(2)}\n\n`;
+        });
+
+        const grandTotal = cart.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+
+        msg += `Nombre: ${customerName || "[Indicar nombre]"}\n`;
+        msg += `Ciudad: ${customerCity || "[Indicar ciudad de destino]"}\n`;
+
+        if (observations && observations.trim() !== "") {
+          msg += `Observaciones: ${observations.trim()}\n`;
+        }
+
+        msg += `\nTotal referencial: S/ ${grandTotal.toFixed(2)}\n\n`;
+        msg += `¿Me podrían confirmar la disponibilidad, el costo de envío y cómo realizar mi compra?`;
+
+        return msg;
+      },
+
+      // Mensaje para consultar una prenda individual directamente
+      generateSingleProductInquiry(product, talla, color, cantidad = 1) {
+        const subtotal = product.precio * cantidad;
+        let msg = `Hola, Piojitos Kids. Me gustaría consultar por la siguiente prenda:\n\n`;
+        msg += `Producto: ${product.nombre}\n`;
+        msg += `Talla: ${talla}\n`;
+        msg += `Color: ${color}\n`;
+        msg += `Cantidad: ${cantidad}\n`;
+        msg += `Precio referencial unitario: S/ ${product.precio.toFixed(2)}\n`;
+        msg += `Subtotal referencial: S/ ${subtotal.toFixed(2)}\n\n`;
+        msg += `¿Tienen disponibilidad en este color y cuál sería el costo de envío a mi ciudad?`;
+        return msg;
+      },
+
+      // Envío o enlace a WhatsApp
+      openWhatsappLink(message) {
+        const activeNumber = getActiveWhatsappNumber();
+        const encodedMsg = encodeURIComponent(message);
+
+        METRICS_STORE.trackWhatsappClic();
+
+        if (activeNumber && activeNumber.trim() !== "") {
+          // Limpiar caracteres no numéricos
+          const cleanPhone = activeNumber.replace(/\D/g, "");
+          const url = `https://wa.me/${cleanPhone}?text=${encodedMsg}`;
+          window.open(url, "_blank");
+        } else {
+          // No hay número configurado: copiar mensaje y alertar
+          this.copyToClipboard(message);
+          UI_CONTROLLER.showToast("Número pendiente. Mensaje copiado al portapapeles", "📋");
+        }
+      },
+
+      copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).catch(() => {
+            this.fallbackCopy(text);
+          });
+        } else {
+          this.fallbackCopy(text);
+        }
+      },
+
+      fallbackCopy(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand("copy");
+        } catch (err) {
+          console.error("No se pudo copiar", err);
+        }
+        document.body.removeChild(textArea);
+      }
+    };
+
+    // 8. CONTROLADOR DE INTERFAZ DE USUARIO (UI CONTROLLER)
+    const UI_CONTROLLER = {
+      currentModalProduct: null,
+      currentSelectedSize: null,
+      currentSelectedColor: null,
+      currentModalQty: 1,
+
+      init() {
+        this.renderCatalog();
+        this.renderCategoryFilters();
+        this.renderSizeFilters();
+        this.renderColorFilters();
+        this.renderCart();
+        this.renderMetricsModal();
+        this.bindEvents();
+        CART_STORE.updateBadges();
+      },
+
+      // Filtrado y renderizado del catálogo
+      getFilteredProducts() {
+        return PRODUCTS_DATA.filter(p => {
+          // Búsqueda por texto
+          if (FILTER_STATE.search.trim() !== "") {
+            const query = FILTER_STATE.search.toLowerCase();
+            const matchName = p.nombre.toLowerCase().includes(query);
+            const matchCat = p.categoria.toLowerCase().includes(query);
+            const matchDesc = p.descripcion.toLowerCase().includes(query);
+            if (!matchName && !matchCat && !matchDesc) return false;
+          }
+
+          // Filtro por categoría
+          if (FILTER_STATE.category !== "todos" && p.categoria !== FILTER_STATE.category) {
+            return false;
+          }
+
+          // Filtro por talla
+          if (FILTER_STATE.size && !p.tallas.includes(FILTER_STATE.size)) {
+            return false;
+          }
+
+          // Filtro por color
+          if (FILTER_STATE.color && !p.colores.some(c => c.nombre.toLowerCase().includes(FILTER_STATE.color.toLowerCase()))) {
+            return false;
+          }
+
+          // Filtro por precio
+          if (p.precio > FILTER_STATE.maxPrice) {
+            return false;
+          }
+
+          return true;
+        }).sort((a, b) => {
+          if (FILTER_STATE.sortBy === "precio-asc") return a.precio - b.precio;
+          if (FILTER_STATE.sortBy === "precio-desc") return b.precio - a.precio;
+          if (FILTER_STATE.sortBy === "nombre-asc") return a.nombre.localeCompare(b.nombre);
+          // Destacados primero por defecto
+          return (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0);
+        });
+      },
+
+      renderCatalog() {
+        const grid = document.getElementById("productsGridContainer");
+        const countText = document.getElementById("productsCountText");
+        const filtered = this.getFilteredProducts();
+
+        if (countText) countText.textContent = filtered.length;
+
+        if (!grid) return;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="no-results-state">
+              <div class="no-results-icon">🧶</div>
+              <h3>No encontramos prendas con esos filtros</h3>
+              <p style="color:var(--color-text-muted); margin-bottom:1.25rem;">
+                Prueba ajustando el rango de precios o limpiando los filtros seleccionados.
+              </p>
+              <button type="button" class="btn btn-primary btn-sm" onclick="resetAllFilters()">
+                Ver todo el catálogo
+              </button>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map(p => {
+          let badgeHtml = "";
+          if (p.etiqueta === "Destacado") {
+            badgeHtml = `<span class="badge-tag badge-destacado">⭐ Destacado</span>`;
+          } else if (p.etiqueta === "Nuevo") {
+            badgeHtml = `<span class="badge-tag badge-nuevo">✨ Nuevo</span>`;
+          } else if (p.etiqueta === "Temporada escolar") {
+            badgeHtml = `<span class="badge-tag badge-escolar">🎒 Escolar</span>`;
+          }
+
+          const sizesPreviewHtml = p.tallas.map(t => `<span class="size-pill-mini">T.${t}</span>`).join("");
+
+          return `
+            <article class="product-card" data-id="${p.id}">
+              <div class="product-card-media">
+                <div class="product-card-tags">
+                  ${badgeHtml}
+                </div>
+                <img
+                  src="${p.imagenes[0]}"
+                  alt="${p.nombre}"
+                  class="product-card-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src=generateFallbackSVG('${p.nombre}', '${p.colores[0] ? p.colores[0].hex : '#F7C9D9'}');"
+                >
+              </div>
+
+              <div class="product-card-body">
+                <span class="product-category-meta">${p.categoria}</span>
+                <h3 class="product-card-title">${p.nombre}</h3>
+
+                <div class="product-sizes-preview" title="Tallas disponibles">
+                  ${sizesPreviewHtml}
+                </div>
+
+                <div class="product-card-footer">
+                  <div class="product-price-block">
+                    <span class="price-ref-label">Precio referencial</span>
+                    <span class="product-price-amount">S/ ${p.precio.toFixed(2)}</span>
+                  </div>
+
+                  <div class="product-actions-btn-group">
+                    <button type="button" class="btn-quick-view" onclick="openProductModal('${p.id}')" title="Ver detalles y tallas" aria-label="Ver detalles de ${p.nombre}">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                    <button type="button" class="btn-card-add" onclick="quickAddToCart('${p.id}')" title="Agregar rápido al carrito" aria-label="Agregar ${p.nombre} al carrito">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+      },
+
+      renderCategoryFilters() {
+        const container = document.getElementById("categoryFilterList");
+        if (!container) return;
+
+        const categories = ["todos", "Chompas para niñas", "Chompas para niños", "Ropa infantil", "Campaña escolar", "Otros productos"];
+
+        container.innerHTML = categories.map(cat => {
+          const isSelected = FILTER_STATE.category === cat;
+          const count = cat === "todos"
+            ? PRODUCTS_DATA.length
+            : PRODUCTS_DATA.filter(p => p.categoria === cat).length;
+
+          const label = cat === "todos" ? "Todas las categorías" : cat;
+
+          return `
+            <label class="filter-radio-label">
+              <span style="display:flex; align-items:center;">
+                <input type="radio" name="filterCategory" value="${cat}" ${isSelected ? "checked" : ""} onchange="applyCategoryFilter('${cat}')">
+                <span>${label}</span>
+              </span>
+              <span class="filter-count-badge">${count}</span>
+            </label>
+          `;
+        }).join("");
+      },
+
+      renderSizeFilters() {
+        const container = document.getElementById("sizeFilterGrid");
+        if (!container) return;
+
+        const allSizes = ["2", "4", "6", "8", "10", "12", "14", "16"];
+
+        container.innerHTML = allSizes.map(size => {
+          const isActive = FILTER_STATE.size === size;
+          return `
+            <button type="button" class="size-filter-btn ${isActive ? "active" : ""}" onclick="toggleSizeFilter('${size}')">
+              Talla ${size}
+            </button>
+          `;
+        }).join("");
+      },
+
+      renderColorFilters() {
+        const container = document.getElementById("colorFilterFlex");
+        if (!container) return;
+
+        const colors = [
+          { name: "Rosado", hex: "#F7C9D9" },
+          { name: "Lila", hex: "#DDD3FA" },
+          { name: "Coral", hex: "#F48C8C" },
+          { name: "Azul", hex: "#1E3A8A" },
+          { name: "Crema", hex: "#FFF9F2" },
+          { name: "Mostaza", hex: "#EAB308" },
+          { name: "Plomo", hex: "#9CA3AF" },
+          { name: "Guinda", hex: "#881337" }
+        ];
+
+        container.innerHTML = colors.map(c => {
+          const isActive = FILTER_STATE.color === c.name;
+          return `
+            <button
+              type="button"
+              class="color-swatch-filter ${isActive ? "active" : ""}"
+              style="background-color: ${c.hex};"
+              title="${c.name}"
+              aria-label="Filtrar por color ${c.name}"
+              onclick="toggleColorFilter('${c.name}')"
+            ></button>
+          `;
+        }).join("");
+      },
+
+      // Modal de Producto (Detalles)
+      openProductModal(productId) {
+        const p = PRODUCTS_DATA.find(x => x.id === productId);
+        if (!p) return;
+
+        this.currentModalProduct = p;
+        this.currentSelectedSize = p.tallas[0];
+        this.currentSelectedColor = p.colores[0].nombre;
+        this.currentModalQty = 1;
+
+        // Registrar métrica
+        METRICS_STORE.trackDetalle(p.id);
+
+        const modal = document.getElementById("productModalBackdrop");
+        const title = document.getElementById("modalProductTitle");
+        const cat = document.getElementById("modalProductCategory");
+        const badge = document.getElementById("modalProductBadge");
+        const price = document.getElementById("modalProductPrice");
+        const desc = document.getElementById("modalProductDesc");
+        const mainImg = document.getElementById("modalMainImg");
+        const thumbsRow = document.getElementById("modalThumbsRow");
+        const sizesGroup = document.getElementById("modalSizesGroup");
+        const colorsGroup = document.getElementById("modalColorsGroup");
+        const qtyNum = document.getElementById("modalQtyNumber");
+        const sizeText = document.getElementById("modalSelectedSizeText");
+        const colorText = document.getElementById("modalSelectedColorText");
+
+        if (title) title.textContent = p.nombre;
+        if (cat) cat.textContent = p.categoria;
+        if (price) price.textContent = `S/ ${p.precio.toFixed(2)}`;
+        if (desc) desc.textContent = p.descripcion;
+        if (qtyNum) qtyNum.textContent = "1";
+        if (sizeText) sizeText.textContent = `Talla ${this.currentSelectedSize}`;
+        if (colorText) colorText.textContent = this.currentSelectedColor;
+
+        if (badge) {
+          badge.textContent = p.etiqueta;
+          badge.className = `badge-tag badge-${p.etiqueta.toLowerCase().includes('destacado') ? 'destacado' : (p.etiqueta.toLowerCase().includes('nuevo') ? 'nuevo' : 'escolar')}`;
+        }
+
+        // Imagen principal y miniaturas
+        if (mainImg) {
+          mainImg.src = p.imagenes[0];
+          mainImg.alt = p.nombre;
+          mainImg.onerror = function() {
+            this.onerror = null;
+            this.src = generateFallbackSVG(p.nombre, p.colores[0] ? p.colores[0].hex : "#F7C9D9");
+          };
+        }
+
+        if (thumbsRow) {
+          thumbsRow.innerHTML = p.imagenes.map((imgUrl, i) => `
+            <div class="modal-thumb ${i === 0 ? 'active' : ''}" onclick="selectModalThumb(this, '${imgUrl}')">
+              <img src="${imgUrl}" alt="Vista ${i+1}" onerror="this.onerror=null; this.src=generateFallbackSVG('${p.nombre}', '#F7C9D9');">
+            </div>
+          `).join("");
+        }
+
+        // Tallas
+        if (sizesGroup) {
+          sizesGroup.innerHTML = p.tallas.map((t, i) => `
+            <button type="button" class="size-select-btn ${i === 0 ? 'active' : ''}" onclick="selectModalSize(this, '${t}')">
+              ${t}
+            </button>
+          `).join("");
+        }
+
+        // Colores
+        if (colorsGroup) {
+          colorsGroup.innerHTML = p.colores.map((c, i) => `
+            <button type="button" class="color-select-btn ${i === 0 ? 'active' : ''}" onclick="selectModalColor(this, '${c.nombre}')">
+              <span class="swatch-dot" style="background-color:${c.hex};"></span>
+              <span>${c.nombre}</span>
+            </button>
+          `).join("");
+        }
+
+        if (modal) modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      },
+
+      closeProductModal() {
+        const modal = document.getElementById("productModalBackdrop");
+        if (modal) modal.classList.remove("open");
+        document.body.style.overflow = "";
+      },
+
+      // Render del Carrito de Compras
+      renderCart() {
+        const container = document.getElementById("cartItemsContainer");
+        const totalAmountEl = document.getElementById("cartTotalAmount");
+        const countSummaryEl = document.getElementById("cartSummaryItemsCount");
+        const btnPrepareOrder = document.getElementById("btnOpenOrderModal");
+
+        const cart = CART_STORE.get();
+        const total = CART_STORE.getTotal();
+        const totalCount = CART_STORE.getTotalItemsCount();
+
+        if (totalAmountEl) totalAmountEl.textContent = `S/ ${total.toFixed(2)}`;
+        if (countSummaryEl) countSummaryEl.textContent = totalCount;
+
+        if (btnPrepareOrder) {
+          btnPrepareOrder.disabled = cart.length === 0;
+        }
+
+        if (!container) return;
+
+        if (cart.length === 0) {
+          container.innerHTML = `
+            <div class="cart-empty-view">
+              <div class="cart-empty-icon">🛍️</div>
+              <h4 style="margin-bottom:0.5rem; color:var(--color-dark-text);">Tu selección está vacía</h4>
+              <p style="font-size:0.88rem; margin-bottom:1.5rem;">
+                Aún no has agregado ninguna prenda a tu pedido demostrativo.
+              </p>
+              <a href="#catalogo" class="btn btn-secondary btn-sm" onclick="closeCartDrawer()">
+                Explorar catálogo
+              </a>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = cart.map((item, index) => {
+          const subtotal = item.precio * item.cantidad;
+          return `
+            <div class="cart-item">
+              <img
+                src="${item.imagen}"
+                alt="${item.nombre}"
+                class="cart-item-img"
+                onerror="this.onerror=null; this.src=generateFallbackSVG('${item.nombre}', '#F7C9D9');"
+              >
+
+              <div class="cart-item-details">
+                <h4>${item.nombre}</h4>
+                <div class="cart-item-spec">
+                  Talla: <strong>${item.talla}</strong> • Color: <strong>${item.color}</strong>
+                </div>
+
+                <div class="cart-item-qty-row">
+                  <button type="button" class="cart-item-qty-btn" onclick="CART_STORE.updateQuantity(${index}, -1)" aria-label="Disminuir">-</button>
+                  <span class="cart-item-qty-val">${item.cantidad}</span>
+                  <button type="button" class="cart-item-qty-btn" onclick="CART_STORE.updateQuantity(${index}, 1)" aria-label="Aumentar">+</button>
+                </div>
+              </div>
+
+              <div class="cart-item-price-col">
+                <span class="cart-item-subtotal">S/ ${subtotal.toFixed(2)}</span>
+                <button type="button" class="btn-cart-remove" onclick="CART_STORE.removeItem(${index})" title="Eliminar artículo" aria-label="Eliminar ${item.nombre}">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      },
+
+      // Modal de Preparación de Pedido
+      openOrderModal() {
+        const cart = CART_STORE.get();
+        if (cart.length === 0) {
+          this.showToast("Agrega al menos una prenda para preparar el pedido", "⚠️");
+          return;
+        }
+
+        const modal = document.getElementById("orderModalBackdrop");
+        const alertBox = document.getElementById("whatsappPendingAlert");
+        const btnSendWA = document.getElementById("btnSendWhatsappOrder");
+        const btnSendText = document.getElementById("btnSendWhatsappText");
+
+        const activeNumber = getActiveWhatsappNumber();
+        const hasNumber = activeNumber && activeNumber.trim() !== "";
+
+        if (alertBox) {
+          alertBox.style.display = hasNumber ? "none" : "flex";
+        }
+
+        if (btnSendWA && btnSendText) {
+          if (hasNumber) {
+            btnSendText.textContent = `Enviar pedido a WhatsApp (${activeNumber})`;
+            btnSendWA.style.display = "inline-flex";
+          } else {
+            btnSendText.textContent = "WhatsApp no configurado (Copiar mensaje arriba)";
+            btnSendWA.style.display = "none";
+          }
+        }
+
+        this.updateOrderPreview();
+
+        if (modal) modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      },
+
+      closeOrderModal() {
+        const modal = document.getElementById("orderModalBackdrop");
+        if (modal) modal.classList.remove("open");
+        document.body.style.overflow = "";
+      },
+
+      updateOrderPreview() {
+        const nameInput = document.getElementById("orderCustomerName");
+        const cityInput = document.getElementById("orderCustomerCity");
+        const notesInput = document.getElementById("orderNotes");
+        const previewBox = document.getElementById("whatsappMessagePreview");
+
+        const name = nameInput ? nameInput.value : "";
+        const city = cityInput ? cityInput.value : "";
+        const notes = notesInput ? notesInput.value : "";
+
+        const cart = CART_STORE.get();
+        const msg = WHATSAPP_SERVICE.generateOrderMessage(cart, name, city, notes);
+
+        if (previewBox) {
+          previewBox.textContent = msg;
+        }
+      },
+
+      // Modal de Métricas Demostrativas (Validación)
+      renderMetricsModal() {
+        const m = METRICS_STORE.get();
+        const elDetalles = document.getElementById("metricValDetalles");
+        const elCarrito = document.getElementById("metricValCarrito");
+        const elWA = document.getElementById("metricValClicsWA");
+        const elPedidos = document.getElementById("metricValPedidos");
+        const tbody = document.getElementById("metricsTopProductsTableBody");
+
+        if (elDetalles) elDetalles.textContent = m.detallesClics;
+        if (elCarrito) elCarrito.textContent = m.carritoAgregados;
+        if (elWA) elWA.textContent = m.whatsappClics;
+        if (elPedidos) elPedidos.textContent = m.pedidosPreparados;
+
+        if (tbody) {
+          const statsArray = Object.keys(m.productosStats).map(id => ({
+            id,
+            ...m.productosStats[id]
+          })).sort((a, b) => (b.detalles + b.carrito * 2) - (a.detalles + a.carrito * 2));
+
+          if (statsArray.length === 0) {
+            tbody.innerHTML = `
+              <tr>
+                <td colspan="4" style="text-align:center; color:var(--color-text-muted); padding:1.5rem;">
+                  Aún no hay interacción registrada. Explora prendas o agrégalas al carrito para observar datos locales.
+                </td>
+              </tr>
+            `;
+          } else {
+            tbody.innerHTML = statsArray.slice(0, 6).map(item => `
+              <tr>
+                <td><strong>${item.nombre}</strong></td>
+                <td><span class="badge-supuesto" style="font-size:0.68rem;">${item.categoria || 'Infantil'}</span></td>
+                <td>${item.detalles} clics</td>
+                <td><strong>${item.carrito}</strong> veces</td>
+              </tr>
+            `).join("");
+          }
+        }
+      },
+
+      openMetricsModal() {
+        this.renderMetricsModal();
+        const modal = document.getElementById("metricsModalBackdrop");
+        if (modal) modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      },
+
+      closeMetricsModal() {
+        const modal = document.getElementById("metricsModalBackdrop");
+        if (modal) modal.classList.remove("open");
+        document.body.style.overflow = "";
+      },
+
+      // Modal de Configuración Rápida de WhatsApp
+      openConfigModal() {
+        const modal = document.getElementById("configModalBackdrop");
+        const input = document.getElementById("configWhatsappInput");
+        const status = document.getElementById("configCurrentNumberStatus");
+
+        const activeNumber = getActiveWhatsappNumber();
+        if (input) input.value = activeNumber;
+        if (status) {
+          status.textContent = (activeNumber && activeNumber.trim() !== "")
+            ? activeNumber
+            : "No configurado (Vacío)";
+        }
+
+        if (modal) modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      },
+
+      closeConfigModal() {
+        const modal = document.getElementById("configModalBackdrop");
+        if (modal) modal.classList.remove("open");
+        document.body.style.overflow = "";
+      },
+
+      // Sistema de Notificaciones Toast
+      showToast(message, icon = "✨") {
+        const container = document.getElementById("toastContainer");
+        if (!container) return;
+
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `
+          <span class="toast-icon">${icon}</span>
+          <span>${message}</span>
+        `;
+
+        container.appendChild(toast);
+
+        // Forzar reflow para animación
+        setTimeout(() => toast.classList.add("show"), 10);
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+          setTimeout(() => {
+            if (toast.parentElement) toast.parentElement.removeChild(toast);
+          }, 350);
+        }, 3200);
+      },
+
+      // Event Listeners y Enlaces del DOM
+      bindEvents() {
+        // Sticky Header scroll
+        window.addEventListener("scroll", () => {
+          const header = document.getElementById("mainHeader");
+          if (header) {
+            if (window.scrollY > 30) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          }
+        });
+
+        // Búsqueda en catálogo
+        const searchInput = document.getElementById("searchInputDesktop");
+        if (searchInput) {
+          searchInput.addEventListener("input", (e) => {
+            FILTER_STATE.search = e.target.value;
+            this.renderCatalog();
+          });
+        }
+
+        // Ordenamiento
+        const sortSelect = document.getElementById("sortSelect");
+        if (sortSelect) {
+          sortSelect.addEventListener("change", (e) => {
+            FILTER_STATE.sortBy = e.target.value;
+            this.renderCatalog();
+          });
+        }
+
+        // Slider de precios
+        const priceSlider = document.getElementById("priceRangeSlider");
+        const priceDisplay = document.getElementById("priceDisplayValue");
+        if (priceSlider) {
+          priceSlider.addEventListener("input", (e) => {
+            const val = parseFloat(e.target.value);
+            FILTER_STATE.maxPrice = val;
+            if (priceDisplay) priceDisplay.textContent = `S/ ${val.toFixed(0)}`;
+            this.renderCatalog();
+          });
+        }
+
+        // Reset filtros
+        const btnReset = document.getElementById("btnResetFilters");
+        if (btnReset) {
+          btnReset.addEventListener("click", () => resetAllFilters());
+        }
+
+        // Botones de Carrito
+        const btnCartTrigger = document.getElementById("btnCartTrigger");
+        const btnBottomCart = document.getElementById("btnBottomCartTrigger");
+        const btnCartClose = document.getElementById("btnCartClose");
+        const cartOverlay = document.getElementById("cartDrawerOverlay");
+
+        if (btnCartTrigger) btnCartTrigger.addEventListener("click", () => openCartDrawer());
+        if (btnBottomCart) btnBottomCart.addEventListener("click", () => openCartDrawer());
+        if (btnCartClose) btnCartClose.addEventListener("click", () => closeCartDrawer());
+        if (cartOverlay) cartOverlay.addEventListener("click", () => closeCartDrawer());
+
+        // Botón vaciar carrito
+        const btnClearCart = document.getElementById("btnClearCart");
+        if (btnClearCart) {
+          btnClearCart.addEventListener("click", () => {
+            if (confirm("¿Deseas vaciar tu selección de prendas?")) {
+              CART_STORE.clear();
+            }
+          });
+        }
+
+        // Abrir modal de preparación de pedido
+        const btnOpenOrder = document.getElementById("btnOpenOrderModal");
+        if (btnOpenOrder) {
+          btnOpenOrder.addEventListener("click", () => {
+            closeCartDrawer();
+            this.openOrderModal();
+          });
+        }
+
+        // Cerrar modal de pedido
+        const btnOrderClose = document.getElementById("btnOrderModalClose");
+        const orderBackdrop = document.getElementById("orderModalBackdrop");
+        if (btnOrderClose) btnOrderClose.addEventListener("click", () => this.closeOrderModal());
+        if (orderBackdrop) {
+          orderBackdrop.addEventListener("click", (e) => {
+            if (e.target === orderBackdrop) this.closeOrderModal();
+          });
+        }
+
+        // Inputs en formulario de pedido (actualizan la vista previa en vivo)
+        const nameInput = document.getElementById("orderCustomerName");
+        const cityInput = document.getElementById("orderCustomerCity");
+        const notesInput = document.getElementById("orderNotes");
+        [nameInput, cityInput, notesInput].forEach(inp => {
+          if (inp) inp.addEventListener("input", () => this.updateOrderPreview());
+        });
+
+        // Botón copiar mensaje de pedido
+        const btnCopyOrder = document.getElementById("btnCopyOrderMessage");
+        if (btnCopyOrder) {
+          btnCopyOrder.addEventListener("click", () => {
+            const previewBox = document.getElementById("whatsappMessagePreview");
+            if (previewBox) {
+              WHATSAPP_SERVICE.copyToClipboard(previewBox.textContent);
+              METRICS_STORE.trackWhatsappClic();
+              this.showToast("¡Mensaje de pedido copiado al portapapeles!", "📋");
+            }
+          });
+        }
+
+        // Botón enviar pedido por WhatsApp
+        const btnSendWA = document.getElementById("btnSendWhatsappOrder");
+        if (btnSendWA) {
+          btnSendWA.addEventListener("click", () => {
+            const nameVal = nameInput ? nameInput.value.trim() : "";
+            const cityVal = cityInput ? cityInput.value.trim() : "";
+
+            if (!nameVal || !cityVal) {
+              this.showToast("Por favor completa tu nombre y ciudad de destino", "⚠️");
+              if (!nameVal && nameInput) nameInput.focus();
+              else if (!cityVal && cityInput) cityInput.focus();
+              return;
+            }
+
+            METRICS_STORE.trackPedidoPreparado();
+            const previewBox = document.getElementById("whatsappMessagePreview");
+            if (previewBox) {
+              WHATSAPP_SERVICE.openWhatsappLink(previewBox.textContent);
+            }
+          });
+        }
+
+        // Modal de Producto (Cerrar)
+        const btnModalClose = document.getElementById("btnModalClose");
+        const productBackdrop = document.getElementById("productModalBackdrop");
+        if (btnModalClose) btnModalClose.addEventListener("click", () => this.closeProductModal());
+        if (productBackdrop) {
+          productBackdrop.addEventListener("click", (e) => {
+            if (e.target === productBackdrop) this.closeProductModal();
+          });
+        }
+
+        // Control de cantidad en modal de producto
+        const btnQtyMinus = document.getElementById("btnModalQtyMinus");
+        const btnQtyPlus = document.getElementById("btnModalQtyPlus");
+        const qtyNum = document.getElementById("modalQtyNumber");
+
+        if (btnQtyMinus) {
+          btnQtyMinus.addEventListener("click", () => {
+            if (this.currentModalQty > 1) {
+              this.currentModalQty--;
+              if (qtyNum) qtyNum.textContent = this.currentModalQty;
+            }
+          });
+        }
+        if (btnQtyPlus) {
+          btnQtyPlus.addEventListener("click", () => {
+            this.currentModalQty++;
+            if (qtyNum) qtyNum.textContent = this.currentModalQty;
+          });
+        }
+
+        // Agregar al carrito desde modal
+        const btnModalAdd = document.getElementById("btnModalAddToCart");
+        if (btnModalAdd) {
+          btnModalAdd.addEventListener("click", () => {
+            if (this.currentModalProduct) {
+              CART_STORE.addItem(
+                this.currentModalProduct,
+                this.currentSelectedSize,
+                this.currentSelectedColor,
+                this.currentModalQty
+              );
+              this.closeProductModal();
+            }
+          });
+        }
+
+        // Consulta directa de prenda por WhatsApp desde modal
+        const btnModalDirectWA = document.getElementById("btnModalDirectWhatsapp");
+        if (btnModalDirectWA) {
+          btnModalDirectWA.addEventListener("click", () => {
+            if (this.currentModalProduct) {
+              const msg = WHATSAPP_SERVICE.generateSingleProductInquiry(
+                this.currentModalProduct,
+                this.currentSelectedSize,
+                this.currentSelectedColor,
+                this.currentModalQty
+              );
+              WHATSAPP_SERVICE.openWhatsappLink(msg);
+            }
+          });
+        }
+
+        // Modales de Métricas y Configuración
+        const btnMetricsOpen = document.getElementById("btnOpenMetricsModal");
+        const btnMobileMetrics = document.getElementById("btnMobileMetricsTrigger");
+        const btnMetricsClose = document.getElementById("btnMetricsModalClose");
+        const metricsBackdrop = document.getElementById("metricsModalBackdrop");
+        const btnResetMetrics = document.getElementById("btnResetMetrics");
+
+        if (btnMetricsOpen) btnMetricsOpen.addEventListener("click", () => this.openMetricsModal());
+        if (btnMobileMetrics) {
+          btnMobileMetrics.addEventListener("click", () => {
+            closeMobileDrawer();
+            this.openMetricsModal();
+          });
+        }
+        if (btnMetricsClose) btnMetricsClose.addEventListener("click", () => this.closeMetricsModal());
+        if (metricsBackdrop) {
+          metricsBackdrop.addEventListener("click", (e) => {
+            if (e.target === metricsBackdrop) this.closeMetricsModal();
+          });
+        }
+        if (btnResetMetrics) {
+          btnResetMetrics.addEventListener("click", () => {
+            if (confirm("¿Deseas reiniciar las estadísticas locales de prueba?")) {
+              METRICS_STORE.reset();
+            }
+          });
+        }
+
+        // Configuración de WhatsApp
+        const btnConfigOpen = document.getElementById("btnOpenConfigModal");
+        const btnMobileConfig = document.getElementById("btnMobileConfigTrigger");
+        const btnConfigClose = document.getElementById("btnConfigModalClose");
+        const configBackdrop = document.getElementById("configModalBackdrop");
+        const btnSaveConfig = document.getElementById("btnSaveWhatsappConfig");
+        const btnClearConfig = document.getElementById("btnClearWhatsappConfig");
+
+        if (btnConfigOpen) btnConfigOpen.addEventListener("click", () => this.openConfigModal());
+        if (btnMobileConfig) {
+          btnMobileConfig.addEventListener("click", () => {
+            closeMobileDrawer();
+            this.openConfigModal();
+          });
+        }
+        if (btnConfigClose) btnConfigClose.addEventListener("click", () => this.closeConfigModal());
+        if (configBackdrop) {
+          configBackdrop.addEventListener("click", (e) => {
+            if (e.target === configBackdrop) this.closeConfigModal();
+          });
+        }
+
+        if (btnSaveConfig) {
+          btnSaveConfig.addEventListener("click", () => {
+            const input = document.getElementById("configWhatsappInput");
+            const val = input ? input.value.trim() : "";
+            setActiveWhatsappNumber(val);
+            this.closeConfigModal();
+            this.showToast(val ? `Número configurado: ${val}` : "WhatsApp dejado como pendiente", "📱");
+          });
+        }
+
+        if (btnClearConfig) {
+          btnClearConfig.addEventListener("click", () => {
+            setActiveWhatsappNumber("");
+            this.closeConfigModal();
+            this.showToast("Configuración de WhatsApp restablecida a vacía", "ℹ️");
+          });
+        }
+
+        // Botón flotante de WhatsApp
+        const floatingWA = document.getElementById("floatingWhatsappBtn");
+        if (floatingWA) {
+          floatingWA.addEventListener("click", () => {
+            const cart = CART_STORE.get();
+            if (cart.length > 0) {
+              this.openOrderModal();
+            } else {
+              const generalMsg = "Hola, Piojitos Kids. Estoy visitando su catálogo web y me gustaría recibir información sobre disponibilidad y envíos de sus chompas infantiles.";
+              WHATSAPP_SERVICE.openWhatsappLink(generalMsg);
+            }
+          });
+        }
+
+        // Botón directo de contacto en sección Contacto
+        const btnContactDirect = document.getElementById("btnContactDirectWhatsapp");
+        if (btnContactDirect) {
+          btnContactDirect.addEventListener("click", () => {
+            const generalMsg = "Hola, Piojitos Kids. Quisiera consultar sobre la confección de chompas infantiles y envíos a mi ciudad desde Huancayo.";
+            WHATSAPP_SERVICE.openWhatsappLink(generalMsg);
+          });
+        }
+
+        // Menú móvil (Drawer)
+        const btnMenuOpen = document.getElementById("btnMobileMenuToggle");
+        const btnMenuClose = document.getElementById("btnMobileDrawerClose");
+        const drawerOverlay = document.getElementById("mobileDrawerOverlay");
+
+        if (btnMenuOpen) btnMenuOpen.addEventListener("click", () => openMobileDrawer());
+        if (btnMenuClose) btnMenuClose.addEventListener("click", () => closeMobileDrawer());
+        if (drawerOverlay) drawerOverlay.addEventListener("click", () => closeMobileDrawer());
+
+        // Cerrar menú móvil al hacer clic en enlaces
+        document.querySelectorAll(".mobile-nav-link").forEach(link => {
+          link.addEventListener("click", () => closeMobileDrawer());
+        });
+
+        // Chips de categoría rápida en la barra superior
+        document.querySelectorAll("#quickCategoriesBar .category-chip").forEach(chip => {
+          chip.addEventListener("click", () => {
+            document.querySelectorAll("#quickCategoriesBar .category-chip").forEach(c => c.classList.remove("active"));
+            chip.classList.add("active");
+            const cat = chip.getAttribute("data-category");
+            applyCategoryFilter(cat);
+          });
+        });
+
+        // Tecla Escape cierra cualquier modal activo
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            this.closeProductModal();
+            this.closeOrderModal();
+            this.closeMetricsModal();
+            this.closeConfigModal();
+            closeCartDrawer();
+            closeMobileDrawer();
+          }
+        });
+      }
+    };
+
+    // 9. FUNCIONES GLOBALES PARA EVENTOS EN LÍNEA
+    function openProductModal(id) {
+      UI_CONTROLLER.openProductModal(id);
+    }
+
+    function quickAddToCart(id) {
+      const p = PRODUCTS_DATA.find(x => x.id === id);
+      if (p) {
+        CART_STORE.addItem(p, p.tallas[0], p.colores[0].nombre, 1);
+      }
+    }
+
+    function selectModalThumb(element, imgUrl) {
+      document.querySelectorAll(".modal-thumb").forEach(t => t.classList.remove("active"));
+      element.classList.add("active");
+      const mainImg = document.getElementById("modalMainImg");
+      if (mainImg) mainImg.src = imgUrl;
+    }
+
+    function selectModalSize(btn, size) {
+      document.querySelectorAll(".size-select-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      UI_CONTROLLER.currentSelectedSize = size;
+      const text = document.getElementById("modalSelectedSizeText");
+      if (text) text.textContent = `Talla ${size}`;
+    }
+
+    function selectModalColor(btn, colorName) {
+      document.querySelectorAll(".color-select-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      UI_CONTROLLER.currentSelectedColor = colorName;
+      const text = document.getElementById("modalSelectedColorText");
+      if (text) text.textContent = colorName;
+    }
+
+    function applyCategoryFilter(cat) {
+      FILTER_STATE.category = cat;
+
+      // Actualizar chips superiores
+      document.querySelectorAll("#quickCategoriesBar .category-chip").forEach(chip => {
+        if (chip.getAttribute("data-category") === cat) {
+          chip.classList.add("active");
+        } else {
+          chip.classList.remove("active");
+        }
+      });
+
+      // Actualizar radio buttons
+      document.querySelectorAll("input[name='filterCategory']").forEach(radio => {
+        radio.checked = (radio.value === cat);
+      });
+
+      UI_CONTROLLER.renderCatalog();
+    }
+
+    function toggleSizeFilter(size) {
+      FILTER_STATE.size = (FILTER_STATE.size === size) ? null : size;
+      UI_CONTROLLER.renderSizeFilters();
+      UI_CONTROLLER.renderCatalog();
+    }
+
+    function toggleColorFilter(color) {
+      FILTER_STATE.color = (FILTER_STATE.color === color) ? null : color;
+      UI_CONTROLLER.renderColorFilters();
+      UI_CONTROLLER.renderCatalog();
+    }
+
+    function resetAllFilters() {
+      FILTER_STATE.search = "";
+      FILTER_STATE.category = "todos";
+      FILTER_STATE.size = null;
+      FILTER_STATE.color = null;
+      FILTER_STATE.maxPrice = 70;
+      FILTER_STATE.sortBy = "destacados";
+
+      const searchInput = document.getElementById("searchInputDesktop");
+      if (searchInput) searchInput.value = "";
+
+      const priceSlider = document.getElementById("priceRangeSlider");
+      const priceDisplay = document.getElementById("priceDisplayValue");
+      if (priceSlider) priceSlider.value = "70";
+      if (priceDisplay) priceDisplay.textContent = "S/ 70";
+
+      const sortSelect = document.getElementById("sortSelect");
+      if (sortSelect) sortSelect.value = "destacados";
+
+      applyCategoryFilter("todos");
+      UI_CONTROLLER.renderSizeFilters();
+      UI_CONTROLLER.renderColorFilters();
+      UI_CONTROLLER.renderCatalog();
+      UI_CONTROLLER.showToast("Filtros restablecidos", "🧹");
+    }
+
+    function openCartDrawer() {
+      const drawer = document.getElementById("cartDrawer");
+      const overlay = document.getElementById("cartDrawerOverlay");
+      if (drawer) drawer.classList.add("open");
+      if (overlay) overlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById("cartDrawer");
+      const overlay = document.getElementById("cartDrawerOverlay");
+      if (drawer) drawer.classList.remove("open");
+      if (overlay) overlay.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function openMobileDrawer() {
+      const drawer = document.getElementById("mobileDrawer");
+      const overlay = document.getElementById("mobileDrawerOverlay");
+      if (drawer) drawer.classList.add("open");
+      if (overlay) overlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileDrawer() {
+      const drawer = document.getElementById("mobileDrawer");
+      const overlay = document.getElementById("mobileDrawerOverlay");
+      if (drawer) drawer.classList.remove("open");
+      if (overlay) overlay.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    // Inicialización al cargar el DOM
+    document.addEventListener("DOMContentLoaded", () => {
+      UI_CONTROLLER.init();
+    });
+  </script>
+</body>
+</html>
